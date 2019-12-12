@@ -41,6 +41,11 @@
             this.label11 = new System.Windows.Forms.Label();
             this.buttonCopyTelegram = new System.Windows.Forms.Button();
             this.buttonCopySignal = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -159,7 +164,7 @@
             this.buttonCopyTelegram.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonCopyTelegram.Font = new System.Drawing.Font("Ink Free", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonCopyTelegram.ForeColor = System.Drawing.Color.White;
-            this.buttonCopyTelegram.Location = new System.Drawing.Point(63, 405);
+            this.buttonCopyTelegram.Location = new System.Drawing.Point(63, 395);
             this.buttonCopyTelegram.Margin = new System.Windows.Forms.Padding(5);
             this.buttonCopyTelegram.Name = "buttonCopyTelegram";
             this.buttonCopyTelegram.Size = new System.Drawing.Size(150, 75);
@@ -173,13 +178,79 @@
             this.buttonCopySignal.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonCopySignal.Font = new System.Drawing.Font("Ink Free", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonCopySignal.ForeColor = System.Drawing.Color.White;
-            this.buttonCopySignal.Location = new System.Drawing.Point(1150, 385);
+            this.buttonCopySignal.Location = new System.Drawing.Point(1150, 395);
             this.buttonCopySignal.Margin = new System.Windows.Forms.Padding(5);
             this.buttonCopySignal.Name = "buttonCopySignal";
             this.buttonCopySignal.Size = new System.Drawing.Size(150, 75);
             this.buttonCopySignal.TabIndex = 12;
             this.buttonCopySignal.Text = "  Send\r\nCopySignal";
             this.buttonCopySignal.UseVisualStyleBackColor = false;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Font = new System.Drawing.Font("Ink Free", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.ForeColor = System.Drawing.Color.White;
+            this.groupBox1.Location = new System.Drawing.Point(63, 527);
+            this.groupBox1.MaximumSize = new System.Drawing.Size(1237, 301);
+            this.groupBox1.MinimumSize = new System.Drawing.Size(1237, 301);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(1237, 301);
+            this.groupBox1.TabIndex = 1;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Send";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Enabled = false;
+            this.textBox2.Location = new System.Drawing.Point(20, 25);
+            this.textBox2.MaximumSize = new System.Drawing.Size(1200, 260);
+            this.textBox2.MinimumSize = new System.Drawing.Size(1200, 260);
+            this.textBox2.Multiline = true;
+            this.textBox2.Name = "textBox2";
+            this.textBox2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBox2.Size = new System.Drawing.Size(1200, 260);
+            this.textBox2.TabIndex = 2;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.Font = new System.Drawing.Font("Ink Free", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10"});
+            this.comboBox1.Location = new System.Drawing.Point(403, 236);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 27);
+            this.comboBox1.TabIndex = 13;
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.Font = new System.Drawing.Font("Ink Free", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "0 ms",
+            "25 ms",
+            "50 ms",
+            "75 ms",
+            "100 ms",
+            "125 ms",
+            "150 ms",
+            "175 ms",
+            "200 ms"});
+            this.comboBox2.Location = new System.Drawing.Point(403, 286);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(121, 27);
+            this.comboBox2.TabIndex = 14;
             // 
             // Form1
             // 
@@ -189,6 +260,9 @@
             this.BackgroundImage = global::CAN_BUS_komunikacija.Properties.Resources.backimage;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1358, 828);
+            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.buttonCopySignal);
             this.Controls.Add(this.buttonCopyTelegram);
             this.Controls.Add(this.label10);
@@ -213,6 +287,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CAN BUS Komunikacija";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -233,6 +309,10 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button buttonCopyTelegram;
         private System.Windows.Forms.Button buttonCopySignal;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBox2;
     }
 }
 
