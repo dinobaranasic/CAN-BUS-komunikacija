@@ -20,8 +20,8 @@ namespace CAN_BUS_komunikacija
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            comboBox1.SelectedIndex = 0;
-            comboBox2.SelectedIndex = 0;
+            comboBox_BROJ_Poruka.SelectedIndex = 0;
+            comboBox_MS.SelectedIndex = 0;
         }
 
         //Svojstva checkBox i checkBoxo --> ako jedan on njih posatane oznaćen automatski postane i drugi, isto tako vrijedi i za odznačivanje
@@ -217,7 +217,49 @@ namespace CAN_BUS_komunikacija
         #endregion
 
 
+        //Svojstvo da se mogu upisati samo brojevi te se oni kasnije pretvraju u Hex brojeve.
+        #region CAN ID
+        private void textBox_CAN_ID_OUTPUT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+        #endregion
 
+        //Svojstvo da se mogu upisati samo Hex brojevi maksimalne dužine 2
+        #region Hex brojevi
+        public const string HexLetters = "0123456789abcdefABCDEF\b";
+        private void textBox7I_KeyPress(object sender, KeyPressEventArgs e)
+            {
+            if (!HexLetters.Contains(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
 
+        private void textBox7_0_KeyPress(object sender, KeyPressEventArgs e)
+        {
+        if (!HexLetters.Contains(e.KeyChar))
+        {
+            e.Handled = true;
+        }
     }
+
+
+        #endregion
+
+        //button CopyTelegram
+        private void buttonCopyTelegram_Click(object sender, EventArgs e)
+        {
+            //string canidinput = textBox1.Text;
+            //int br = Int32.Parse(canidinput);
+            //string hexValue = br.ToString("X");
+
+            //textBoxSend.Text = hexValue.ToString();
+            //textBoxSend.Text = "Input CAN ID : " + hexValue.ToString() + " HEX \n";
+        }
+
+   }
 }
