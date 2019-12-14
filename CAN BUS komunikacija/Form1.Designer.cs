@@ -97,7 +97,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Ink Free", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(6, 74);
+            this.label5.Location = new System.Drawing.Point(13, 74);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(85, 26);
             this.label5.TabIndex = 4;
@@ -170,6 +170,7 @@
             // textBoxSend
             // 
             this.textBoxSend.Enabled = false;
+            this.textBoxSend.Font = new System.Drawing.Font("Ink Free", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxSend.Location = new System.Drawing.Point(25, 35);
             this.textBoxSend.MaximumSize = new System.Drawing.Size(900, 200);
             this.textBoxSend.MinimumSize = new System.Drawing.Size(900, 200);
@@ -225,6 +226,7 @@
             // 
             this.textBox_CAN_ID_INPUT.Font = new System.Drawing.Font("Ink Free", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_CAN_ID_INPUT.Location = new System.Drawing.Point(103, 37);
+            this.textBox_CAN_ID_INPUT.MaxLength = 9;
             this.textBox_CAN_ID_INPUT.Name = "textBox_CAN_ID_INPUT";
             this.textBox_CAN_ID_INPUT.Size = new System.Drawing.Size(100, 26);
             this.textBox_CAN_ID_INPUT.TabIndex = 15;
@@ -233,7 +235,7 @@
             // textBox0I
             // 
             this.textBox0I.Font = new System.Drawing.Font("Ink Free", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox0I.Location = new System.Drawing.Point(108, 76);
+            this.textBox0I.Location = new System.Drawing.Point(115, 76);
             this.textBox0I.MaximumSize = new System.Drawing.Size(30, 26);
             this.textBox0I.MaxLength = 2;
             this.textBox0I.MinimumSize = new System.Drawing.Size(30, 26);
@@ -245,7 +247,7 @@
             // textBox1I
             // 
             this.textBox1I.Font = new System.Drawing.Font("Ink Free", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1I.Location = new System.Drawing.Point(150, 76);
+            this.textBox1I.Location = new System.Drawing.Point(157, 76);
             this.textBox1I.MaximumSize = new System.Drawing.Size(30, 26);
             this.textBox1I.MaxLength = 2;
             this.textBox1I.MinimumSize = new System.Drawing.Size(30, 26);
@@ -257,7 +259,7 @@
             // textBox2I
             // 
             this.textBox2I.Font = new System.Drawing.Font("Ink Free", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2I.Location = new System.Drawing.Point(192, 76);
+            this.textBox2I.Location = new System.Drawing.Point(199, 76);
             this.textBox2I.MaximumSize = new System.Drawing.Size(30, 26);
             this.textBox2I.MaxLength = 2;
             this.textBox2I.MinimumSize = new System.Drawing.Size(30, 26);
@@ -269,7 +271,7 @@
             // textBox3I
             // 
             this.textBox3I.Font = new System.Drawing.Font("Ink Free", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3I.Location = new System.Drawing.Point(234, 76);
+            this.textBox3I.Location = new System.Drawing.Point(241, 76);
             this.textBox3I.MaximumSize = new System.Drawing.Size(30, 26);
             this.textBox3I.MaxLength = 2;
             this.textBox3I.MinimumSize = new System.Drawing.Size(30, 26);
@@ -281,7 +283,7 @@
             // textBox4I
             // 
             this.textBox4I.Font = new System.Drawing.Font("Ink Free", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4I.Location = new System.Drawing.Point(276, 76);
+            this.textBox4I.Location = new System.Drawing.Point(283, 76);
             this.textBox4I.MaximumSize = new System.Drawing.Size(30, 26);
             this.textBox4I.MaxLength = 2;
             this.textBox4I.MinimumSize = new System.Drawing.Size(30, 26);
@@ -293,7 +295,7 @@
             // textBox5I
             // 
             this.textBox5I.Font = new System.Drawing.Font("Ink Free", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5I.Location = new System.Drawing.Point(318, 76);
+            this.textBox5I.Location = new System.Drawing.Point(325, 76);
             this.textBox5I.MaximumSize = new System.Drawing.Size(30, 26);
             this.textBox5I.MaxLength = 2;
             this.textBox5I.MinimumSize = new System.Drawing.Size(30, 26);
@@ -305,7 +307,7 @@
             // textBox6I
             // 
             this.textBox6I.Font = new System.Drawing.Font("Ink Free", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6I.Location = new System.Drawing.Point(360, 76);
+            this.textBox6I.Location = new System.Drawing.Point(367, 76);
             this.textBox6I.MaximumSize = new System.Drawing.Size(30, 26);
             this.textBox6I.MaxLength = 2;
             this.textBox6I.MinimumSize = new System.Drawing.Size(30, 26);
@@ -317,7 +319,7 @@
             // textBox7I
             // 
             this.textBox7I.Font = new System.Drawing.Font("Ink Free", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7I.Location = new System.Drawing.Point(402, 76);
+            this.textBox7I.Location = new System.Drawing.Point(409, 76);
             this.textBox7I.MaximumSize = new System.Drawing.Size(30, 26);
             this.textBox7I.MaxLength = 2;
             this.textBox7I.MinimumSize = new System.Drawing.Size(30, 26);
@@ -534,6 +536,7 @@
             // 
             this.textBox_CAN_ID_OUTPUT.Font = new System.Drawing.Font("Ink Free", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_CAN_ID_OUTPUT.Location = new System.Drawing.Point(103, 37);
+            this.textBox_CAN_ID_OUTPUT.MaxLength = 9;
             this.textBox_CAN_ID_OUTPUT.Name = "textBox_CAN_ID_OUTPUT";
             this.textBox_CAN_ID_OUTPUT.Size = new System.Drawing.Size(100, 26);
             this.textBox_CAN_ID_OUTPUT.TabIndex = 15;
@@ -545,14 +548,14 @@
             this.label6.Font = new System.Drawing.Font("Ink Free", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(6, 74);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(85, 26);
+            this.label6.Size = new System.Drawing.Size(133, 26);
             this.label6.TabIndex = 4;
-            this.label6.Text = "Payload";
+            this.label6.Text = "Def. Payload";
             // 
             // textBox7_0
             // 
             this.textBox7_0.Font = new System.Drawing.Font("Ink Free", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7_0.Location = new System.Drawing.Point(402, 76);
+            this.textBox7_0.Location = new System.Drawing.Point(448, 76);
             this.textBox7_0.MaximumSize = new System.Drawing.Size(30, 26);
             this.textBox7_0.MaxLength = 2;
             this.textBox7_0.MinimumSize = new System.Drawing.Size(30, 26);
@@ -564,7 +567,7 @@
             // textBox0_0
             // 
             this.textBox0_0.Font = new System.Drawing.Font("Ink Free", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox0_0.Location = new System.Drawing.Point(108, 76);
+            this.textBox0_0.Location = new System.Drawing.Point(154, 76);
             this.textBox0_0.MaximumSize = new System.Drawing.Size(30, 26);
             this.textBox0_0.MaxLength = 2;
             this.textBox0_0.MinimumSize = new System.Drawing.Size(30, 26);
@@ -576,7 +579,7 @@
             // textBox1_O
             // 
             this.textBox1_O.Font = new System.Drawing.Font("Ink Free", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1_O.Location = new System.Drawing.Point(150, 76);
+            this.textBox1_O.Location = new System.Drawing.Point(196, 76);
             this.textBox1_O.MaximumSize = new System.Drawing.Size(30, 26);
             this.textBox1_O.MaxLength = 2;
             this.textBox1_O.MinimumSize = new System.Drawing.Size(30, 26);
@@ -588,7 +591,7 @@
             // textBox2_0
             // 
             this.textBox2_0.Font = new System.Drawing.Font("Ink Free", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2_0.Location = new System.Drawing.Point(192, 76);
+            this.textBox2_0.Location = new System.Drawing.Point(238, 76);
             this.textBox2_0.MaximumSize = new System.Drawing.Size(30, 26);
             this.textBox2_0.MaxLength = 2;
             this.textBox2_0.MinimumSize = new System.Drawing.Size(30, 26);
@@ -600,7 +603,7 @@
             // textBox3_0
             // 
             this.textBox3_0.Font = new System.Drawing.Font("Ink Free", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3_0.Location = new System.Drawing.Point(234, 76);
+            this.textBox3_0.Location = new System.Drawing.Point(280, 76);
             this.textBox3_0.MaximumSize = new System.Drawing.Size(30, 26);
             this.textBox3_0.MaxLength = 2;
             this.textBox3_0.MinimumSize = new System.Drawing.Size(30, 26);
@@ -612,7 +615,7 @@
             // textBox4_0
             // 
             this.textBox4_0.Font = new System.Drawing.Font("Ink Free", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4_0.Location = new System.Drawing.Point(276, 76);
+            this.textBox4_0.Location = new System.Drawing.Point(322, 76);
             this.textBox4_0.MaximumSize = new System.Drawing.Size(30, 26);
             this.textBox4_0.MaxLength = 2;
             this.textBox4_0.MinimumSize = new System.Drawing.Size(30, 26);
@@ -650,7 +653,7 @@
             // textBox5_0
             // 
             this.textBox5_0.Font = new System.Drawing.Font("Ink Free", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5_0.Location = new System.Drawing.Point(318, 76);
+            this.textBox5_0.Location = new System.Drawing.Point(364, 76);
             this.textBox5_0.MaximumSize = new System.Drawing.Size(30, 26);
             this.textBox5_0.MaxLength = 2;
             this.textBox5_0.MinimumSize = new System.Drawing.Size(30, 26);
@@ -675,7 +678,7 @@
             // textBox6_0
             // 
             this.textBox6_0.Font = new System.Drawing.Font("Ink Free", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6_0.Location = new System.Drawing.Point(360, 76);
+            this.textBox6_0.Location = new System.Drawing.Point(406, 76);
             this.textBox6_0.MaximumSize = new System.Drawing.Size(30, 26);
             this.textBox6_0.MaxLength = 2;
             this.textBox6_0.MinimumSize = new System.Drawing.Size(30, 26);

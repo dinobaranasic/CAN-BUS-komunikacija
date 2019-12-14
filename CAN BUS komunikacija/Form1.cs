@@ -11,6 +11,7 @@ using System.Windows.Forms;
 
 namespace CAN_BUS_komunikacija
 {
+
     public partial class Form1 : Form
     {
         public Form1()
@@ -18,13 +19,22 @@ namespace CAN_BUS_komunikacija
             InitializeComponent();
         }
 
+        //Inicijalizacija na početne vrijednosti
         private void Form1_Load(object sender, EventArgs e)
         {
             comboBox_BROJ_Poruka.SelectedIndex = 0;
             comboBox_MS.SelectedIndex = 0;
+            textBox0_0.Text = "01";
+            textBox1_O.Text = "23";
+            textBox2_0.Text = "45";
+            textBox3_0.Text = "67";
+            textBox4_0.Text = "89";
+            textBox5_0.Text = "AB";
+            textBox6_0.Text = "CD";
+            textBox7_0.Text = "EF";
         }
 
-        //Svojstva checkBox i checkBoxo --> ako jedan on njih posatane oznaćen automatski postane i drugi, isto tako vrijedi i za odznačivanje
+        //Svojstvo checkBox i checkBoxo --> ako jedan on njih posatane oznaćen automatski postane i drugi, isto tako vrijedi i za odznačivanje
         #region checkBox
         private void checkBox0_CheckedChanged(object sender, EventArgs e)
         {
@@ -216,7 +226,6 @@ namespace CAN_BUS_komunikacija
         }
         #endregion
 
-
         //Svojstvo da se mogu upisati samo brojevi te se oni kasnije pretvraju u Hex brojeve.
         #region CAN ID
         private void textBox_CAN_ID_OUTPUT_KeyPress(object sender, KeyPressEventArgs e)
@@ -230,10 +239,10 @@ namespace CAN_BUS_komunikacija
 
         //Svojstvo da se mogu upisati samo Hex brojevi maksimalne dužine 2
         #region Hex brojevi
-        public const string HexLetters = "0123456789abcdefABCDEF\b";
+        string HexNiz = Podaci.HexLetters.ToString();
         private void textBox7I_KeyPress(object sender, KeyPressEventArgs e)
             {
-            if (!HexLetters.Contains(e.KeyChar))
+            if (!HexNiz.Contains(e.KeyChar))
             {
                 e.Handled = true;
             }
@@ -241,7 +250,7 @@ namespace CAN_BUS_komunikacija
 
         private void textBox7_0_KeyPress(object sender, KeyPressEventArgs e)
         {
-        if (!HexLetters.Contains(e.KeyChar))
+        if (!HexNiz.Contains(e.KeyChar))
         {
             e.Handled = true;
         }
@@ -250,15 +259,52 @@ namespace CAN_BUS_komunikacija
 
         #endregion
 
+        //Svojstvo o radu s greškama
+        #region Greške
+        //Greška -> CAN ID
+        private void greškaCanId()
+        {
+            textBoxSend.Clear();
+            string message = "Ne možete poslati bez CAN ID! \nUpišite CAN ID.";
+            string title = "Greška -> CAN ID";
+            MessageBox.Show(message, title);
+            textBoxSend.Text += "Molim upišite u Input i Output CAN ID." + Environment.NewLine;
+        }
+        //Greška -> Payload
+        private void greškaPayload()
+        {
+            textBoxSend.Clear();
+            string message = "Ne možete poslati bez Payloada! \nUpišite Payload.";
+            string title = "Greška -> Payload";
+            MessageBox.Show(message, title);
+            textBoxSend.Text += "Molim upišite u Input i Output Payload." + Environment.NewLine;
+        }
+        #endregion
+
         //button CopyTelegram
         private void buttonCopyTelegram_Click(object sender, EventArgs e)
         {
-            //string canidinput = textBox1.Text;
-            //int br = Int32.Parse(canidinput);
-            //string hexValue = br.ToString("X");
+            if (textBox_CAN_ID_INPUT.Text == "" || textBox_CAN_ID_OUTPUT.Text == "")
+            {
+                greškaCanId();
+            }
+            else if (textBox0I.Text=="" || textBox0_0.Text=="" || textBox1I.Text=="" || textBox1_O.Text=="" || textBox2I.Text=="" || textBox2_0.Text=="" || textBox3I.Text=="" || textBox3_0.Text=="" || textBox4I.Text=="" || textBox4_0.Text=="" ||textBox5I.Text=="" ||textBox5_0.Text=="" ||textBox6I.Text=="" ||textBox6_0.Text=="" || textBox7I.Text=="" || textBox7_0.Text=="" )
+            {
+                greškaPayload();
+            }
+            else {
+                string canidinput = textBox_CAN_ID_INPUT.Text;
+                int br = Int32.Parse(canidinput);
+                string hexValue = br.ToString("X");
 
-            //textBoxSend.Text = hexValue.ToString();
-            //textBoxSend.Text = "Input CAN ID : " + hexValue.ToString() + " HEX \n";
+                textBoxSend.Clear();
+                textBoxSend.Text += hexValue.ToString() + Environment.NewLine;
+                textBoxSend.Text += "Line 2" + Environment.NewLine;
+            }
+           
+
+
+
         }
 
    }
