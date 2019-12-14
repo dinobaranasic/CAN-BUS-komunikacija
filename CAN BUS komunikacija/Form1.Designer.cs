@@ -78,6 +78,7 @@
             this.checkBox0o = new System.Windows.Forms.CheckBox();
             this.checkBox2o = new System.Windows.Forms.CheckBox();
             this.checkBox1o = new System.Windows.Forms.CheckBox();
+            this.buttondefault = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -107,7 +108,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Ink Free", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(18, 247);
+            this.label10.Location = new System.Drawing.Point(7, 246);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(290, 26);
             this.label10.TabIndex = 10;
@@ -117,7 +118,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Ink Free", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(523, 244);
+            this.label11.Location = new System.Drawing.Point(600, 246);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(258, 26);
             this.label11.TabIndex = 9;
@@ -196,7 +197,7 @@
             "8",
             "9",
             "10"});
-            this.comboBox_BROJ_Poruka.Location = new System.Drawing.Point(808, 243);
+            this.comboBox_BROJ_Poruka.Location = new System.Drawing.Point(871, 245);
             this.comboBox_BROJ_Poruka.Name = "comboBox_BROJ_Poruka";
             this.comboBox_BROJ_Poruka.Size = new System.Drawing.Size(121, 27);
             this.comboBox_BROJ_Poruka.TabIndex = 13;
@@ -217,7 +218,7 @@
             "150 ms",
             "175 ms",
             "200 ms"});
-            this.comboBox_MS.Location = new System.Drawing.Point(330, 246);
+            this.comboBox_MS.Location = new System.Drawing.Point(303, 246);
             this.comboBox_MS.Name = "comboBox_MS";
             this.comboBox_MS.Size = new System.Drawing.Size(121, 27);
             this.comboBox_MS.TabIndex = 14;
@@ -752,6 +753,21 @@
             this.checkBox1o.UseVisualStyleBackColor = true;
             this.checkBox1o.CheckedChanged += new System.EventHandler(this.checkBox1o_CheckedChanged_1);
             // 
+            // buttondefault
+            // 
+            this.buttondefault.BackColor = System.Drawing.Color.White;
+            this.buttondefault.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttondefault.Font = new System.Drawing.Font("Ink Free", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttondefault.ForeColor = System.Drawing.Color.Black;
+            this.buttondefault.Location = new System.Drawing.Point(470, 223);
+            this.buttondefault.Margin = new System.Windows.Forms.Padding(5);
+            this.buttondefault.Name = "buttondefault";
+            this.buttondefault.Size = new System.Drawing.Size(100, 50);
+            this.buttondefault.TabIndex = 51;
+            this.buttondefault.Text = "Default";
+            this.buttondefault.UseVisualStyleBackColor = false;
+            this.buttondefault.Click += new System.EventHandler(this.buttondefault_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -760,6 +776,7 @@
             this.BackgroundImage = global::CAN_BUS_komunikacija.Properties.Resources.backimage;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1008, 729);
+            this.Controls.Add(this.buttondefault);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.comboBox_MS);
@@ -842,6 +859,7 @@
         private System.Windows.Forms.CheckBox checkBox0o;
         private System.Windows.Forms.CheckBox checkBox2o;
         private System.Windows.Forms.CheckBox checkBox1o;
+        private System.Windows.Forms.Button buttondefault;
     }
 }
 

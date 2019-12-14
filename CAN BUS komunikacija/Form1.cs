@@ -281,6 +281,114 @@ namespace CAN_BUS_komunikacija
         }
         #endregion
 
+        //Svojstvo dohvačanja podatak iz textboxa
+        #region Dohvat Payloada
+        //0
+        private string i0 (){
+            string vrijednost1bayta = textBox0I.Text.ToUpper();
+            return vrijednost1bayta;
+        }
+        private string o0()
+        {
+            string vrijednost1bayta = textBox0_0.Text.ToUpper();
+            return vrijednost1bayta;
+        }
+        //1
+        private string i1()
+        {
+            string vrijednost1bayta = textBox1I.Text.ToUpper();
+            return vrijednost1bayta;
+        }
+        private string o1()
+        {
+            string vrijednost1bayta = textBox1_O.Text.ToUpper();
+            return vrijednost1bayta;
+        }
+        //2
+        private string i2()
+        {
+            string vrijednost1bayta = textBox2I.Text.ToUpper();
+            return vrijednost1bayta;
+        }
+        private string o2()
+        {
+            string vrijednost1bayta = textBox2_0.Text.ToUpper();
+            return vrijednost1bayta;
+        }
+        //3
+        private string i3()
+        {
+            string vrijednost1bayta = textBox3I.Text.ToUpper();
+            return vrijednost1bayta;
+        }
+        private string o3()
+        {
+            string vrijednost1bayta = textBox3_0.Text.ToUpper();
+            return vrijednost1bayta;
+        }
+        //4
+        private string i4()
+        {
+            string vrijednost1bayta = textBox4I.Text.ToUpper();
+            return vrijednost1bayta;
+        }
+        private string o4()
+        {
+            string vrijednost1bayta = textBox4_0.Text.ToUpper();
+            return vrijednost1bayta;
+        }
+        //5
+        private string i5()
+        {
+            string vrijednost1bayta = textBox5I.Text.ToUpper();
+            return vrijednost1bayta;
+        }
+        private string o5()
+        {
+            string vrijednost1bayta = textBox5_0.Text.ToUpper();
+            return vrijednost1bayta;
+        }
+        //6
+        private string i6()
+        {
+            string vrijednost1bayta = textBox6I.Text.ToUpper();
+            return vrijednost1bayta;
+        }
+        private string o6()
+        {
+            string vrijednost1bayta = textBox6_0.Text.ToUpper();
+            return vrijednost1bayta;
+        }
+        //7
+        private string i7()
+        {
+            string vrijednost1bayta = textBox7I.Text.ToUpper();
+            return vrijednost1bayta;
+        }
+        private string o7()
+        {
+            string vrijednost1bayta = textBox7_0.Text.ToUpper();
+            return vrijednost1bayta;
+        }
+        #endregion
+
+        //Svojstvo ispisa payloada
+        #region Ispis Payloada
+        //Input
+        private string inputPayloadIspis()
+        {
+            string payload = i0() + i1() + i2() + i3() + i4() + i5() + i6() + i7();
+            return payload;
+        }
+        private string outputPayloadIspis()
+        {
+            string payload = o0() + o1() + o2() + o3() + o4() + o5() + o6() + o7();
+            return payload;
+        }
+        //Output
+        #endregion
+
+
         //button CopyTelegram
         private void buttonCopyTelegram_Click(object sender, EventArgs e)
         {
@@ -297,9 +405,24 @@ namespace CAN_BUS_komunikacija
                 int br = Int32.Parse(canidinput);
                 string hexValue = br.ToString("X");
 
+                string canidoutput = textBox_CAN_ID_OUTPUT.Text;
+                int brout = Int32.Parse(canidoutput);
+                string hexValueout = brout.ToString("X");
+
+
                 textBoxSend.Clear();
-                textBoxSend.Text += hexValue.ToString() + Environment.NewLine;
-                textBoxSend.Text += "Line 2" + Environment.NewLine;
+                textBoxSend.Text += "--------------------------------------------> Before Send <--------------------------------------------" + Environment.NewLine;
+                textBoxSend.Text += "Input -> CAN ID: " + hexValue.ToString() + " [Hex]" + Environment.NewLine;
+                textBoxSend.Text += "Input -> Payload: " + inputPayloadIspis() + Environment.NewLine;
+                textBoxSend.Text += "Output -> CAN ID: " + hexValueout.ToString() + " [Hex]" + Environment.NewLine;
+                textBoxSend.Text += "Output -> Payload: " + outputPayloadIspis() + Environment.NewLine;
+                textBoxSend.Text += "---------------------------------------------> After Send <---------------------------------------------" + Environment.NewLine;
+                textBoxSend.Text += "Input -> CAN ID: " + hexValue.ToString() + " [Hex]" + Environment.NewLine;
+                textBoxSend.Text += "Input -> Payload: " + inputPayloadIspis() + Environment.NewLine;
+                textBoxSend.Text += "Output -> CAN ID: " + hexValueout.ToString() + " [Hex]" + Environment.NewLine;
+                textBoxSend.Text += "Output -> Payload: " + outputPayloadIspis() + Environment.NewLine;
+
+
             }
            
 
@@ -307,5 +430,23 @@ namespace CAN_BUS_komunikacija
 
         }
 
-   }
+        //button Default
+        private void buttondefault_Click(object sender, EventArgs e)
+        {
+            textBox_CAN_ID_INPUT.Clear();
+            textBox_CAN_ID_OUTPUT.Clear();
+            textBox0I.Clear();
+            textBox1I.Clear();
+            textBox2I.Clear();
+            textBox3I.Clear();
+            textBox4I.Clear();
+            textBox5I.Clear();
+            textBox6I.Clear();
+            textBox7I.Clear();
+            Form1_Load(sender,e);
+            textBoxSend.Clear();
+            
+        }
+
+    }
 }
