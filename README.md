@@ -12,6 +12,7 @@ Payload -> Upisuju se HEX brojevi koji su zamišljeni kao payload. Veličine 8 b
 maksimalnom dužinom jednog polja od 2 znamenke.
 
 Def. Payload -> Prilikom pokretanja aplikacije se upisuje početni payload koji se može izmjeniti kako korisnik želi.
+
 Upisuje se : 0123456789ABCDEF.
 Upisuju se HEX brojevi koji su zamišljeni kao payload. Veličine 8 byta. Osam textbox polja za unos sa 
 maksimalnom dužinom jednog polja od 2 znamenke.
