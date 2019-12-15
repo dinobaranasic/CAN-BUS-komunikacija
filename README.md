@@ -17,7 +17,7 @@ Upisuju se HEX brojevi koji su zamišljeni kao payload. Veličine 8 byta. Osam t
 maksimalnom dužinom jednog polja od 2 znamenke.
 
 Signal -> Redni broj bytea unutar payloada.
-Checkbox je zamišljen tako da potvrdi koji bayt želimo sa tipkokm Copysignal kopirati iz Input payloada u Output.
+Checkbox je zamišljen tako da potvrdi koji bayt želimo sa tipkom Copysignal kopirati iz Input payloada u Output.
 Samo označeni checkboxi se kopiraju.
 
 _________________________________________________________________________________________________________________________
