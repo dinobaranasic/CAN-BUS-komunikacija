@@ -35,7 +35,6 @@
             this.buttonCopyTelegram = new System.Windows.Forms.Button();
             this.buttonCopySignal = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBoxSend = new System.Windows.Forms.TextBox();
             this.comboBox_BROJ_Poruka = new System.Windows.Forms.ComboBox();
             this.comboBox_MS = new System.Windows.Forms.ComboBox();
             this.textBox_CAN_ID_INPUT = new System.Windows.Forms.TextBox();
@@ -79,6 +78,7 @@
             this.checkBox2o = new System.Windows.Forms.CheckBox();
             this.checkBox1o = new System.Windows.Forms.CheckBox();
             this.buttondefault = new System.Windows.Forms.Button();
+            this.send = new System.Windows.Forms.RichTextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -152,11 +152,12 @@
             this.buttonCopySignal.TabIndex = 12;
             this.buttonCopySignal.Text = "  Send\r\nCopySignal";
             this.buttonCopySignal.UseVisualStyleBackColor = false;
+            this.buttonCopySignal.Click += new System.EventHandler(this.buttonCopySignal_Click);
             // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox1.Controls.Add(this.textBoxSend);
+            this.groupBox1.Controls.Add(this.send);
             this.groupBox1.Font = new System.Drawing.Font("Ink Free", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.White;
             this.groupBox1.Location = new System.Drawing.Point(30, 450);
@@ -167,19 +168,6 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Send";
-            // 
-            // textBoxSend
-            // 
-            this.textBoxSend.Enabled = false;
-            this.textBoxSend.Font = new System.Drawing.Font("Ink Free", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxSend.Location = new System.Drawing.Point(25, 35);
-            this.textBoxSend.MaximumSize = new System.Drawing.Size(900, 200);
-            this.textBoxSend.MinimumSize = new System.Drawing.Size(900, 200);
-            this.textBoxSend.Multiline = true;
-            this.textBoxSend.Name = "textBoxSend";
-            this.textBoxSend.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBoxSend.Size = new System.Drawing.Size(900, 200);
-            this.textBoxSend.TabIndex = 2;
             // 
             // comboBox_BROJ_Poruka
             // 
@@ -768,6 +756,18 @@
             this.buttondefault.UseVisualStyleBackColor = false;
             this.buttondefault.Click += new System.EventHandler(this.buttondefault_Click);
             // 
+            // send
+            // 
+            this.send.Cursor = System.Windows.Forms.Cursors.Default;
+            this.send.Font = new System.Drawing.Font("Ink Free", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.send.Location = new System.Drawing.Point(20, 41);
+            this.send.Name = "send";
+            this.send.ReadOnly = true;
+            this.send.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
+            this.send.Size = new System.Drawing.Size(900, 188);
+            this.send.TabIndex = 0;
+            this.send.Text = "";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -798,7 +798,6 @@
             this.Text = "CAN BUS Komunikacija";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
@@ -816,7 +815,6 @@
         private System.Windows.Forms.Button buttonCopyTelegram;
         private System.Windows.Forms.Button buttonCopySignal;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox textBoxSend;
         private System.Windows.Forms.ComboBox comboBox_BROJ_Poruka;
         private System.Windows.Forms.ComboBox comboBox_MS;
         private System.Windows.Forms.TextBox textBox_CAN_ID_INPUT;
@@ -860,6 +858,7 @@
         private System.Windows.Forms.CheckBox checkBox2o;
         private System.Windows.Forms.CheckBox checkBox1o;
         private System.Windows.Forms.Button buttondefault;
+        private System.Windows.Forms.RichTextBox send;
     }
 }
 

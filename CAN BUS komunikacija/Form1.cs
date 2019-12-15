@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace CAN_BUS_komunikacija
 {
-
+    //Dino Baranašić
     public partial class Form1 : Form
     {
         public Form1()
@@ -32,7 +32,39 @@ namespace CAN_BUS_komunikacija
             textBox5_0.Text = "AB";
             textBox6_0.Text = "CD";
             textBox7_0.Text = "EF";
+            send.ReadOnly = true;
         }
+
+        //Svojstvo za mijenjanje boje texa - Input i Output
+        #region Boje Input i Output
+        private void inputColor()
+        {
+            int start = 0;
+            int end = send.Text.LastIndexOf("Input");
+
+            send.SelectAll();
+            while (start < end)
+            {
+                send.Find("Input", start, send.TextLength, RichTextBoxFinds.MatchCase);
+                send.SelectionColor = Color.Red;
+                start = send.Text.IndexOf("Input", start) + 1;
+            }
+        }
+
+        private void outputColor()
+        {
+            int start = 0;
+            int end = send.Text.LastIndexOf("Output");
+
+            send.SelectAll();
+            while (start < end)
+            {
+                send.Find("Output", start, send.TextLength, RichTextBoxFinds.MatchCase);
+                send.SelectionColor = Color.Blue;
+                start = send.Text.IndexOf("Output", start) + 1;
+            }
+        }
+        #endregion
 
         //Svojstvo checkBox i checkBoxo --> ako jedan on njih posatane oznaćen automatski postane i drugi, isto tako vrijedi i za odznačivanje
         #region checkBox
@@ -241,7 +273,7 @@ namespace CAN_BUS_komunikacija
         #region Hex brojevi
         string HexNiz = Podaci.HexLetters.ToString();
         private void textBox7I_KeyPress(object sender, KeyPressEventArgs e)
-            {
+        {
             if (!HexNiz.Contains(e.KeyChar))
             {
                 e.Handled = true;
@@ -250,11 +282,11 @@ namespace CAN_BUS_komunikacija
 
         private void textBox7_0_KeyPress(object sender, KeyPressEventArgs e)
         {
-        if (!HexNiz.Contains(e.KeyChar))
-        {
-            e.Handled = true;
+            if (!HexNiz.Contains(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
-    }
 
 
         #endregion
@@ -264,110 +296,191 @@ namespace CAN_BUS_komunikacija
         //Greška -> CAN ID
         private void greškaCanId()
         {
-            textBoxSend.Clear();
+            send.Clear();
             string message = "Ne možete poslati bez CAN ID! \nUpišite CAN ID.";
             string title = "Greška -> CAN ID";
             MessageBox.Show(message, title);
-            textBoxSend.Text += "Molim upišite u Input i Output CAN ID." + Environment.NewLine;
+            send.Text += "Molim upišite u Input i Output CAN ID." + Environment.NewLine;
         }
         //Greška -> Payload
         private void greškaPayload()
         {
-            textBoxSend.Clear();
+            send.Clear();
             string message = "Ne možete poslati bez Payloada! \nUpišite Payload.";
             string title = "Greška -> Payload";
             MessageBox.Show(message, title);
-            textBoxSend.Text += "Molim upišite u Input i Output Payload." + Environment.NewLine;
+            send.Text += "Molim upišite u Input i Output Payload." + Environment.NewLine;
         }
         #endregion
 
-        //Svojstvo dohvačanja podatak iz textboxa
+        //Svojstvo dohvačanja podatak iz textboxa i ako je samo jedna brojka upisana u textbox dodaje se 0 ispred te brojke
         #region Dohvat Payloada
         //0
-        private string i0 (){
+        private string i0()
+        {
             string vrijednost1bayta = textBox0I.Text.ToUpper();
+            if (vrijednost1bayta.Length == 1)
+            {
+                vrijednost1bayta = "0" + vrijednost1bayta;
+                return vrijednost1bayta;
+            }
             return vrijednost1bayta;
         }
         private string o0()
         {
             string vrijednost1bayta = textBox0_0.Text.ToUpper();
+            if (vrijednost1bayta.Length == 1)
+            {
+                vrijednost1bayta = "0" + vrijednost1bayta;
+                return vrijednost1bayta;
+            }
             return vrijednost1bayta;
         }
         //1
         private string i1()
         {
             string vrijednost1bayta = textBox1I.Text.ToUpper();
+            if (vrijednost1bayta.Length == 1)
+            {
+                vrijednost1bayta = "0" + vrijednost1bayta;
+                return vrijednost1bayta;
+            }
             return vrijednost1bayta;
         }
         private string o1()
         {
             string vrijednost1bayta = textBox1_O.Text.ToUpper();
+            if (vrijednost1bayta.Length == 1)
+            {
+                vrijednost1bayta = "0" + vrijednost1bayta;
+                return vrijednost1bayta;
+            }
             return vrijednost1bayta;
         }
         //2
         private string i2()
         {
             string vrijednost1bayta = textBox2I.Text.ToUpper();
+            if (vrijednost1bayta.Length == 1)
+            {
+                vrijednost1bayta = "0" + vrijednost1bayta;
+                return vrijednost1bayta;
+            }
             return vrijednost1bayta;
         }
         private string o2()
         {
             string vrijednost1bayta = textBox2_0.Text.ToUpper();
+            if (vrijednost1bayta.Length == 1)
+            {
+                vrijednost1bayta = "0" + vrijednost1bayta;
+                return vrijednost1bayta;
+            }
             return vrijednost1bayta;
         }
         //3
         private string i3()
         {
             string vrijednost1bayta = textBox3I.Text.ToUpper();
+            if (vrijednost1bayta.Length == 1)
+            {
+                vrijednost1bayta = "0" + vrijednost1bayta;
+                return vrijednost1bayta;
+            }
             return vrijednost1bayta;
         }
         private string o3()
         {
             string vrijednost1bayta = textBox3_0.Text.ToUpper();
+            if (vrijednost1bayta.Length == 1)
+            {
+                vrijednost1bayta = "0" + vrijednost1bayta;
+                return vrijednost1bayta;
+            }
             return vrijednost1bayta;
         }
         //4
         private string i4()
         {
             string vrijednost1bayta = textBox4I.Text.ToUpper();
+            if (vrijednost1bayta.Length == 1)
+            {
+                vrijednost1bayta = "0" + vrijednost1bayta;
+                return vrijednost1bayta;
+            }
             return vrijednost1bayta;
         }
         private string o4()
         {
             string vrijednost1bayta = textBox4_0.Text.ToUpper();
+            if (vrijednost1bayta.Length == 1)
+            {
+                vrijednost1bayta = "0" + vrijednost1bayta;
+                return vrijednost1bayta;
+            }
             return vrijednost1bayta;
         }
         //5
         private string i5()
         {
             string vrijednost1bayta = textBox5I.Text.ToUpper();
+            if (vrijednost1bayta.Length == 1)
+            {
+                vrijednost1bayta = "0" + vrijednost1bayta;
+                return vrijednost1bayta;
+            }
             return vrijednost1bayta;
         }
         private string o5()
         {
             string vrijednost1bayta = textBox5_0.Text.ToUpper();
+            if (vrijednost1bayta.Length == 1)
+            {
+                vrijednost1bayta = "0" + vrijednost1bayta;
+                return vrijednost1bayta;
+            }
             return vrijednost1bayta;
         }
         //6
         private string i6()
         {
             string vrijednost1bayta = textBox6I.Text.ToUpper();
+            if (vrijednost1bayta.Length == 1)
+            {
+                vrijednost1bayta = "0" + vrijednost1bayta;
+                return vrijednost1bayta;
+            }
             return vrijednost1bayta;
         }
         private string o6()
         {
             string vrijednost1bayta = textBox6_0.Text.ToUpper();
+            if (vrijednost1bayta.Length == 1)
+            {
+                vrijednost1bayta = "0" + vrijednost1bayta;
+                return vrijednost1bayta;
+            }
             return vrijednost1bayta;
         }
         //7
         private string i7()
         {
             string vrijednost1bayta = textBox7I.Text.ToUpper();
+            if (vrijednost1bayta.Length == 1)
+            {
+                vrijednost1bayta = "0" + vrijednost1bayta;
+                return vrijednost1bayta;
+            }
             return vrijednost1bayta;
         }
         private string o7()
         {
             string vrijednost1bayta = textBox7_0.Text.ToUpper();
+            if (vrijednost1bayta.Length == 1)
+            {
+                vrijednost1bayta = "0" + vrijednost1bayta;
+                return vrijednost1bayta;
+            }
             return vrijednost1bayta;
         }
         #endregion
@@ -388,48 +501,112 @@ namespace CAN_BUS_komunikacija
         //Output
         #endregion
 
-
-        //button CopyTelegram
-        private void buttonCopyTelegram_Click(object sender, EventArgs e)
+        //Svojstvo kopiranja Inputa Payloada u Output Payload
+        #region Copy Payload
+        //0
+        private string copy0()
         {
-            if (textBox_CAN_ID_INPUT.Text == "" || textBox_CAN_ID_OUTPUT.Text == "")
-            {
-                greškaCanId();
-            }
-            else if (textBox0I.Text=="" || textBox0_0.Text=="" || textBox1I.Text=="" || textBox1_O.Text=="" || textBox2I.Text=="" || textBox2_0.Text=="" || textBox3I.Text=="" || textBox3_0.Text=="" || textBox4I.Text=="" || textBox4_0.Text=="" ||textBox5I.Text=="" ||textBox5_0.Text=="" ||textBox6I.Text=="" ||textBox6_0.Text=="" || textBox7I.Text=="" || textBox7_0.Text=="" )
-            {
-                greškaPayload();
-            }
-            else {
-                string canidinput = textBox_CAN_ID_INPUT.Text;
-                int br = Int32.Parse(canidinput);
-                string hexValue = br.ToString("X");
-
-                string canidoutput = textBox_CAN_ID_OUTPUT.Text;
-                int brout = Int32.Parse(canidoutput);
-                string hexValueout = brout.ToString("X");
-
-
-                textBoxSend.Clear();
-                textBoxSend.Text += "--------------------------------------------> Before Send <--------------------------------------------" + Environment.NewLine;
-                textBoxSend.Text += "Input -> CAN ID: " + hexValue.ToString() + " [Hex]" + Environment.NewLine;
-                textBoxSend.Text += "Input -> Payload: " + inputPayloadIspis() + Environment.NewLine;
-                textBoxSend.Text += "Output -> CAN ID: " + hexValueout.ToString() + " [Hex]" + Environment.NewLine;
-                textBoxSend.Text += "Output -> Payload: " + outputPayloadIspis() + Environment.NewLine;
-                textBoxSend.Text += "---------------------------------------------> After Send <---------------------------------------------" + Environment.NewLine;
-                textBoxSend.Text += "Input -> CAN ID: " + hexValue.ToString() + " [Hex]" + Environment.NewLine;
-                textBoxSend.Text += "Input -> Payload: " + inputPayloadIspis() + Environment.NewLine;
-                textBoxSend.Text += "Output -> CAN ID: " + hexValueout.ToString() + " [Hex]" + Environment.NewLine;
-                textBoxSend.Text += "Output -> Payload: " + outputPayloadIspis() + Environment.NewLine;
-
-
-            }
-           
-
-
-
+            string payload = i0();
+            return textBox0_0.Text = payload;
         }
+        //1
+        private string copy1()
+        {
+            string payload = i1();
+            return textBox1_O.Text = payload;
+        }
+        //2
+        private string copy2()
+        {
+            string payload = i2();
+            return textBox2_0.Text = payload;
+        }
+        //3
+        private string copy3()
+        {
+            string payload = i3();
+            return textBox3_0.Text = payload;
+        }
+        //4
+        private string copy4()
+        {
+            string payload = i4();
+            return textBox4_0.Text = payload;
+        }
+        //5
+        private string copy5()
+        {
+            string payload = i5();
+            return textBox5_0.Text = payload;
+        }
+        //6
+        private string copy6()
+        {
+            string payload = i6();
+            return textBox6_0.Text = payload;
+        }
+        //7
+        private string copy7()
+        {
+            string payload = i7();
+            return textBox7_0.Text = payload;
+        }
+        #endregion
 
+        //Svojstvo kopiranja svega ili provjera prije kopiranja
+        #region Copy
+        //Svojstvo kopiranja svega ili provjera te zatim kopiranja
+        private void copyAll()
+        {
+            copy0();
+            copy1();
+            copy2();
+            copy3();
+            copy4();
+            copy5();
+            copy6();
+            copy7();
+        }
+        //Provjera te zatim kopiranje
+        private void ifCopy()
+        {
+            if (checkBox0.Checked == true)
+            {
+                copy0();
+            }
+            if (checkBox1.Checked == true)
+            {
+                copy1();
+            }
+            if (checkBox2.Checked == true)
+            {
+                copy2();
+            }
+            if (checkBox3.Checked == true)
+            {
+                copy3();
+            }
+            if (checkBox4.Checked == true)
+            {
+                copy4();
+            }
+            if (checkBox5.Checked == true)
+            {
+                copy5();
+            }
+            if (checkBox6.Checked == true)
+            {
+                copy6();
+            }
+            if (checkBox7.Checked == true)
+            {
+                copy7();
+            }
+        }
+        #endregion
+
+        //Button
+        #region Button
         //button Default
         private void buttondefault_Click(object sender, EventArgs e)
         {
@@ -443,10 +620,97 @@ namespace CAN_BUS_komunikacija
             textBox5I.Clear();
             textBox6I.Clear();
             textBox7I.Clear();
-            Form1_Load(sender,e);
-            textBoxSend.Clear();
-            
+            Form1_Load(sender, e);
+            send.Clear();
         }
+
+        //button CopyTelegram
+        private void buttonCopyTelegram_Click(object sender, EventArgs e)
+        {
+            if (textBox_CAN_ID_INPUT.Text == "" || textBox_CAN_ID_OUTPUT.Text == "")
+            {
+                greškaCanId();
+            }
+            else if (textBox0I.Text == "" || textBox0_0.Text == "" || textBox1I.Text == "" || textBox1_O.Text == "" || textBox2I.Text == "" || textBox2_0.Text == "" || textBox3I.Text == "" || textBox3_0.Text == "" || textBox4I.Text == "" || textBox4_0.Text == "" || textBox5I.Text == "" || textBox5_0.Text == "" || textBox6I.Text == "" || textBox6_0.Text == "" || textBox7I.Text == "" || textBox7_0.Text == "")
+            {
+                greškaPayload();
+            }
+            else
+            {
+                string canidinput = textBox_CAN_ID_INPUT.Text;
+                int br = Int32.Parse(canidinput);
+                string hexValue = br.ToString("X");
+
+                string canidoutput = textBox_CAN_ID_OUTPUT.Text;
+                int brout = Int32.Parse(canidoutput);
+                string hexValueout = brout.ToString("X");
+
+                send.Clear();
+                send.Text += "Copy Telegram kopira Input payload u Output payload." + Environment.NewLine;
+                send.Text += "--------------------------------------------> Before Send <--------------------------------------------" + Environment.NewLine;
+                send.Text += "Input -> CAN ID: " + hexValue.ToString() + " [Hex]" + Environment.NewLine;
+                send.Text += "Input -> Payload: " + inputPayloadIspis() + Environment.NewLine;
+                send.Text += "Output -> CAN ID: " + hexValueout.ToString() + " [Hex]" + Environment.NewLine;
+                send.Text += "Output -> Payload: " + outputPayloadIspis() + Environment.NewLine;
+                send.Text += "---------------------------------------------> After Send <---------------------------------------------" + Environment.NewLine;
+                copyAll();
+                send.Text += "Input -> CAN ID: " + hexValue.ToString() + " [Hex]" + Environment.NewLine;
+                send.Text += "Input -> Payload: " + inputPayloadIspis() + Environment.NewLine;
+                send.Text += "Output -> CAN ID: " + hexValueout.ToString() + " [Hex]" + Environment.NewLine;
+                send.Text += "Output -> Payload: " + outputPayloadIspis() + Environment.NewLine;
+                inputColor();
+                outputColor();
+            }
+
+
+
+
+        }
+
+        //button CopySignal
+        private void buttonCopySignal_Click(object sender, EventArgs e)
+        {
+            if (textBox_CAN_ID_INPUT.Text == "" || textBox_CAN_ID_OUTPUT.Text == "")
+            {
+                greškaCanId();
+            }
+            else if (textBox0I.Text == "" || textBox0_0.Text == "" || textBox1I.Text == "" || textBox1_O.Text == "" || textBox2I.Text == "" || textBox2_0.Text == "" || textBox3I.Text == "" || textBox3_0.Text == "" || textBox4I.Text == "" || textBox4_0.Text == "" || textBox5I.Text == "" || textBox5_0.Text == "" || textBox6I.Text == "" || textBox6_0.Text == "" || textBox7I.Text == "" || textBox7_0.Text == "")
+            {
+                greškaPayload();
+            }
+            else
+            {
+                string canidinput = textBox_CAN_ID_INPUT.Text;
+                int br = Int32.Parse(canidinput);
+                string hexValue = br.ToString("X");
+
+                string canidoutput = textBox_CAN_ID_OUTPUT.Text;
+                int brout = Int32.Parse(canidoutput);
+                string hexValueout = brout.ToString("X");
+
+                send.Clear();
+                send.Text += "Copy Signal kopira samo dio je potvrden u checkboxu iz Input payload u Output payload." + Environment.NewLine;
+                send.Text += "Signal - Redni broj bytea unutar payloada se kopira iz Input u Output" + Environment.NewLine;
+                send.Text += "--------------------------------------------> Before Send <--------------------------------------------" + Environment.NewLine;
+                send.Text += "Input -> CAN ID: " + hexValue.ToString() + " [Hex]" + Environment.NewLine;
+                send.Text += "Input -> Payload: " + inputPayloadIspis() + Environment.NewLine;
+                send.Text += "Output -> CAN ID: " + hexValueout.ToString() + " [Hex]" + Environment.NewLine;
+                send.Text += "Output -> Payload: " + outputPayloadIspis() + Environment.NewLine;
+                send.Text += "---------------------------------------------> After Send <---------------------------------------------" + Environment.NewLine;
+                ifCopy();
+                send.Text += "Input -> CAN ID: " + hexValue.ToString() + " [Hex]" + Environment.NewLine;
+                send.Text += "Input -> Payload: " + inputPayloadIspis() + Environment.NewLine;
+                send.Text += "Output -> CAN ID: " + hexValueout.ToString() + " [Hex]" + Environment.NewLine;
+                send.Text += "Output -> Payload: " + outputPayloadIspis() + Environment.NewLine;
+                inputColor();
+                outputColor();
+            }
+
+
+
+
+        }
+        #endregion
 
     }
 }

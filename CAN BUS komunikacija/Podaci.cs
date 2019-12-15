@@ -12,8 +12,5 @@ namespace CAN_BUS_komunikacija
     {
         //Niz za uspoređivanje Hex brojeva
         public const string HexLetters = "0123456789abcdefABCDEF\b";
-
-        
-
     }
 }
