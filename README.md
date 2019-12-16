@@ -1,54 +1,39 @@
-Primjer CAN BUS komunikacije. Jednostavna komunikacija prema unosu korisnika. U izradi...
+# Primjer CAN BUS komunikacije. 
+
+Jednostavna komunikacija prema unosu korisnika. U izradi...
 
 Komunikacija je zamišljena tako da korisnik upiše CAN ID i Payload te prema vrsti tipke pošalje Payload na drugi CAN ID.
 
-________________________________________________________________________________________________________________________
+## Unos:
 
-Unos:
+**CAN ID** -> Upisuju se brojke maksimalne dužine 9 koje se kasnije pretvraju i prikazuju kao HEX brojevi.
 
-CAN ID -> Upisuju se brojke maksimalne dužine 9 koje se kasnije pretvraju i prikazuju kao HEX brojevi.
+**Payload** -> Upisuju se HEX brojevi koji su zamišljeni kao payload. Veličine 8 byta. Osam textbox polja za unos sa maksimalnom dužinom jednog polja od 2 znamenke.
 
-Payload -> Upisuju se HEX brojevi koji su zamišljeni kao payload. Veličine 8 byta. Osam textbox polja za unos sa 
-maksimalnom dužinom jednog polja od 2 znamenke.
+**Def. Payload** -> Prilikom pokretanja aplikacije se upisuje početni payload koji se može izmjeniti kako korisnik želi. Upisuje se : 0123456789ABCDEF. Upisuju se HEX brojevi koji su zamišljeni kao payload. Veličine 8 byta. Osam textbox polja za unos sa maksimalnom dužinom jednog polja od 2 znamenke.
 
-Def. Payload -> Prilikom pokretanja aplikacije se upisuje početni payload koji se može izmjeniti kako korisnik želi.
-Upisuje se : 0123456789ABCDEF.
-Upisuju se HEX brojevi koji su zamišljeni kao payload. Veličine 8 byta. Osam textbox polja za unos sa 
-maksimalnom dužinom jednog polja od 2 znamenke.
+**Signal** -> Redni broj bytea unutar payloada. Checkbox je zamišljen tako da potvrdi koji bayt želimo sa tipkom Copysignal kopirati iz Input payloada u Output. Samo označeni checkboxi se kopiraju.
 
-Signal -> Redni broj bytea unutar payloada.
-Checkbox je zamišljen tako da potvrdi koji bayt želimo sa tipkom Copysignal kopirati iz Input payloada u Output.
-Samo označeni checkboxi se kopiraju.
+## Button:
 
-_________________________________________________________________________________________________________________________
+**Default** -> Briše dosadašnje podatke i stvara izgled aplikacije kao prilikom pokretanja.
 
-Button:
+**Send CopyTelegram** -> Kopira Input payload u Output payload.
 
-Default -> Briše dosadašnje podatke i stvara izgled aplikacije kao prilikom pokretanja.
+**Send CopySignal** -> Kopira Input payload ovisno o potvrdi checkboxa u Output payload.
 
-Send CopyTelegram-> Kopira Input payload u Output payload.
+## Output:
 
-Send CopySignal-> Kopira Input payload ovisno o potvrdi checkboxa u Output payload.
+**Send** -> Prikazuje se akcija određene tipke. Opisuje se akcija koja se dogodila. Prikazuje prijašnje stanje payloada ovisno o CAN ID te Input ili Otput te stanje nakon pritiska na tipku.
 
-_________________________________________________________________________________________________________________________
+## Greške:
 
-Output:
+**Greška CAN ID** -> Prikazuje se greška ako nismo upisali CAN ID.
 
-Send -> Prikazuje se akcija određene tipke. Opisuje se akcija koja se dogodila.
-Prikazuje prijašnje stanje payloada ovisno o CAN ID te Input ili Otput te stanje nakon pritiska na tipku.
+**Greška Payload** -> Prikazuje se greška ako nismo upisali payload.
 
-_________________________________________________________________________________________________________________________
+### U izradi:
 
-Greške:
+**Ciklus slanja poruka** -> Šalje određen broj poruka svakih odabranih ms.
 
-Greška CAN ID -> Prikazuje se greška ako nismo upisali CAN ID.
-
-Greška Payload -> Prikazuje se greška ako nismo upisali payload.
-
-_________________________________________________________________________________________________________________________
-
-U izradi:
-
-Ciklus slanja poruka -> Šalje određen broj poruka svakih odabranih ms.
-
-Broj poslanih poruka -> Šalje određen broj poruka svakih odabranih ms.
+**Broj poslanih poruka** -> Šalje određen broj poruka svakih odabranih ms.
