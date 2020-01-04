@@ -35,6 +35,7 @@
             this.buttonCopyTelegram = new System.Windows.Forms.Button();
             this.buttonCopySignal = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.send = new System.Windows.Forms.RichTextBox();
             this.comboBox_BROJ_Poruka = new System.Windows.Forms.ComboBox();
             this.comboBox_MS = new System.Windows.Forms.ComboBox();
             this.textBox_CAN_ID_INPUT = new System.Windows.Forms.TextBox();
@@ -78,7 +79,7 @@
             this.checkBox2o = new System.Windows.Forms.CheckBox();
             this.checkBox1o = new System.Windows.Forms.CheckBox();
             this.buttondefault = new System.Windows.Forms.Button();
-            this.send = new System.Windows.Forms.RichTextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -169,6 +170,18 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Send";
             // 
+            // send
+            // 
+            this.send.Cursor = System.Windows.Forms.Cursors.Default;
+            this.send.Font = new System.Drawing.Font("Ink Free", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.send.Location = new System.Drawing.Point(20, 41);
+            this.send.Name = "send";
+            this.send.ReadOnly = true;
+            this.send.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
+            this.send.Size = new System.Drawing.Size(900, 188);
+            this.send.TabIndex = 0;
+            this.send.Text = "";
+            // 
             // comboBox_BROJ_Poruka
             // 
             this.comboBox_BROJ_Poruka.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -197,15 +210,15 @@
             this.comboBox_MS.Font = new System.Drawing.Font("Ink Free", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox_MS.FormattingEnabled = true;
             this.comboBox_MS.Items.AddRange(new object[] {
-            "0 ms",
-            "25 ms",
-            "50 ms",
-            "75 ms",
-            "100 ms",
-            "125 ms",
-            "150 ms",
-            "175 ms",
-            "200 ms"});
+            "0",
+            "25",
+            "50",
+            "75",
+            "100",
+            "125",
+            "150",
+            "175",
+            "200"});
             this.comboBox_MS.Location = new System.Drawing.Point(303, 246);
             this.comboBox_MS.Name = "comboBox_MS";
             this.comboBox_MS.Size = new System.Drawing.Size(121, 27);
@@ -756,17 +769,15 @@
             this.buttondefault.UseVisualStyleBackColor = false;
             this.buttondefault.Click += new System.EventHandler(this.buttondefault_Click);
             // 
-            // send
+            // label7
             // 
-            this.send.Cursor = System.Windows.Forms.Cursors.Default;
-            this.send.Font = new System.Drawing.Font("Ink Free", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.send.Location = new System.Drawing.Point(20, 41);
-            this.send.Name = "send";
-            this.send.ReadOnly = true;
-            this.send.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.send.Size = new System.Drawing.Size(900, 188);
-            this.send.TabIndex = 0;
-            this.send.Text = "";
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Ink Free", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(423, 247);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(39, 26);
+            this.label7.TabIndex = 52;
+            this.label7.Text = "ms";
             // 
             // Form1
             // 
@@ -776,6 +787,7 @@
             this.BackgroundImage = global::CAN_BUS_komunikacija.Properties.Resources.backimage;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1008, 729);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.buttondefault);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -859,6 +871,7 @@
         private System.Windows.Forms.CheckBox checkBox1o;
         private System.Windows.Forms.Button buttondefault;
         private System.Windows.Forms.RichTextBox send;
+        private System.Windows.Forms.Label label7;
     }
 }
 

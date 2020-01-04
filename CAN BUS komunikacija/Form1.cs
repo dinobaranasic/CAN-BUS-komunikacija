@@ -6,6 +6,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -48,6 +49,34 @@ namespace CAN_BUS_komunikacija
                 send.Find("Input", start, send.TextLength, RichTextBoxFinds.MatchCase);
                 send.SelectionColor = Color.Red;
                 start = send.Text.IndexOf("Input", start) + 1;
+            }
+        }
+
+        private void brojporukeColor()
+        {
+            int start = 0;
+            int end = send.Text.LastIndexOf("Poruka broj:");
+
+            send.SelectAll();
+            while (start < end)
+            {
+                send.Find("Poruka broj:", start, send.TextLength, RichTextBoxFinds.MatchCase);
+                send.SelectionColor = Color.DimGray;
+                start = send.Text.IndexOf("Poruka broj:", start) + 1;
+            }
+        }
+
+        private void ciklusColor()
+        {
+            int start = 0;
+            int end = send.Text.LastIndexOf("Ciklus slanja poruka(ms): ->");
+
+            send.SelectAll();
+            while (start < end)
+            {
+                send.Find("Ciklus slanja poruka(ms): ->", start, send.TextLength, RichTextBoxFinds.MatchCase);
+                send.SelectionColor = Color.Olive;
+                start = send.Text.IndexOf("Ciklus slanja poruka(ms): ->", start) + 1;
             }
         }
 
@@ -645,26 +674,45 @@ namespace CAN_BUS_komunikacija
                 int brout = Int32.Parse(canidoutput);
                 string hexValueout = brout.ToString("X");
 
+                if (comboBox_MS.SelectedIndex>0 || comboBox_MS.SelectedIndex==0 || comboBox_BROJ_Poruka.SelectedIndex>0 || comboBox_BROJ_Poruka.SelectedIndex==0)
+                {
+
+                string ciklusslanja = comboBox_MS.SelectedItem.ToString();
+                int brojciklusa = Int32.Parse(ciklusslanja);
+
+                string brojporuka= comboBox_BROJ_Poruka.SelectedItem.ToString();
+                int brporuka = Int32.Parse(brojporuka);
+                int pr = 1;
                 send.Clear();
                 send.Text += "Copy Telegram kopira Input payload u Output payload." + Environment.NewLine;
-                send.Text += "--------------------------------------------> Before Send <--------------------------------------------" + Environment.NewLine;
-                send.Text += "Input -> CAN ID: " + hexValue.ToString() + " [Hex]" + Environment.NewLine;
-                send.Text += "Input -> Payload: " + inputPayloadIspis() + Environment.NewLine;
-                send.Text += "Output -> CAN ID: " + hexValueout.ToString() + " [Hex]" + Environment.NewLine;
-                send.Text += "Output -> Payload: " + outputPayloadIspis() + Environment.NewLine;
-                send.Text += "---------------------------------------------> After Send <---------------------------------------------" + Environment.NewLine;
-                copyAll();
-                send.Text += "Input -> CAN ID: " + hexValue.ToString() + " [Hex]" + Environment.NewLine;
-                send.Text += "Input -> Payload: " + inputPayloadIspis() + Environment.NewLine;
-                send.Text += "Output -> CAN ID: " + hexValueout.ToString() + " [Hex]" + Environment.NewLine;
-                send.Text += "Output -> Payload: " + outputPayloadIspis() + Environment.NewLine;
+                send.Text += "Ciklus slanja poruka(ms): -> " + brojciklusa.ToString() + Environment.NewLine;
+                    do
+                    {
+                        Thread.Sleep(brojciklusa);
+                        send.Text += "Poruka broj: -> " + pr.ToString() + Environment.NewLine;
+                        send.Text += "--------------------------------------------> Before Send <--------------------------------------------" + Environment.NewLine;
+                        send.Text += "Input -> CAN ID: " + hexValue.ToString() + " [Hex]" + Environment.NewLine;
+                        send.Text += "Input -> Payload: " + inputPayloadIspis() + Environment.NewLine;
+                        send.Text += "Output -> CAN ID: " + hexValueout.ToString() + " [Hex]" + Environment.NewLine;
+                        send.Text += "Output -> Payload: " + outputPayloadIspis() + Environment.NewLine;
+                        send.Text += "---------------------------------------------> After Send <---------------------------------------------" + Environment.NewLine;
+                        copyAll();
+                        send.Text += "Input -> CAN ID: " + hexValue.ToString() + " [Hex]" + Environment.NewLine;
+                        send.Text += "Input -> Payload: " + inputPayloadIspis() + Environment.NewLine;
+                        send.Text += "Output -> CAN ID: " + hexValueout.ToString() + " [Hex]" + Environment.NewLine;
+                        send.Text += "Output -> Payload: " + outputPayloadIspis() + Environment.NewLine;
+                        send.Text += Environment.NewLine;
+                        brporuka -= 1;
+                        pr =pr+ 1;
+                    }
+                    while (brporuka>0);
+                    //Boje
                 inputColor();
                 outputColor();
-            }
-
-
-
-
+                brojporukeColor();
+                ciklusColor();
+                }
+        }
         }
 
         //button CopySignal
