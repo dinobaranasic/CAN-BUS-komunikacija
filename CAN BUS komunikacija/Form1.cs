@@ -634,6 +634,22 @@ namespace CAN_BUS_komunikacija
         }
         #endregion
 
+        //Random
+        #region Random
+        private string rndOutput()
+        {
+            string output = "";
+            for (int i = 0; i < 8; i++)
+            {
+                var r = new Random();
+                int br = r.Next(0, 255);
+                string hexbr = br.ToString("X");
+                output += hexbr.ToString();
+            }
+            return output;
+        }
+        #endregion
+
         //Button
         #region Button
         //button Default
@@ -674,18 +690,18 @@ namespace CAN_BUS_komunikacija
                 int brout = Int32.Parse(canidoutput);
                 string hexValueout = brout.ToString("X");
 
-                if (comboBox_MS.SelectedIndex>0 || comboBox_MS.SelectedIndex==0 || comboBox_BROJ_Poruka.SelectedIndex>0 || comboBox_BROJ_Poruka.SelectedIndex==0)
+                if (comboBox_MS.SelectedIndex > 0 || comboBox_MS.SelectedIndex == 0 || comboBox_BROJ_Poruka.SelectedIndex > 0 || comboBox_BROJ_Poruka.SelectedIndex == 0)
                 {
 
-                string ciklusslanja = comboBox_MS.SelectedItem.ToString();
-                int brojciklusa = Int32.Parse(ciklusslanja);
+                    string ciklusslanja = comboBox_MS.SelectedItem.ToString();
+                    int brojciklusa = Int32.Parse(ciklusslanja);
 
-                string brojporuka= comboBox_BROJ_Poruka.SelectedItem.ToString();
-                int brporuka = Int32.Parse(brojporuka);
-                int pr = 1;
-                send.Clear();
-                send.Text += "Copy Telegram kopira Input payload u Output payload." + Environment.NewLine;
-                send.Text += "Ciklus slanja poruka(ms): -> " + brojciklusa.ToString() + Environment.NewLine;
+                    string brojporuka = comboBox_BROJ_Poruka.SelectedItem.ToString();
+                    int brporuka = Int32.Parse(brojporuka);
+                    int pr = 1;
+                    send.Clear();
+                    send.Text += "Copy Telegram kopira Input payload u Output payload." + Environment.NewLine;
+                    send.Text += "Ciklus slanja poruka(ms): -> " + brojciklusa.ToString() + Environment.NewLine;
                     do
                     {
                         Thread.Sleep(brojciklusa);
@@ -694,7 +710,15 @@ namespace CAN_BUS_komunikacija
                         send.Text += "Input -> CAN ID: " + hexValue.ToString() + " [Hex]" + Environment.NewLine;
                         send.Text += "Input -> Payload: " + inputPayloadIspis() + Environment.NewLine;
                         send.Text += "Output -> CAN ID: " + hexValueout.ToString() + " [Hex]" + Environment.NewLine;
-                        send.Text += "Output -> Payload: " + outputPayloadIspis() + Environment.NewLine;
+                        if (pr == 1)
+                        {
+                            send.Text += "Output -> Payload: " + outputPayloadIspis() + Environment.NewLine;
+                        }
+                        else
+                        {
+                            string payload = rndOutput();
+                            send.Text += "Output -> Payload: " + payload + Environment.NewLine;
+                        }
                         send.Text += "---------------------------------------------> After Send <---------------------------------------------" + Environment.NewLine;
                         copyAll();
                         send.Text += "Input -> CAN ID: " + hexValue.ToString() + " [Hex]" + Environment.NewLine;
@@ -703,16 +727,16 @@ namespace CAN_BUS_komunikacija
                         send.Text += "Output -> Payload: " + outputPayloadIspis() + Environment.NewLine;
                         send.Text += Environment.NewLine;
                         brporuka -= 1;
-                        pr =pr+ 1;
+                        pr = pr + 1;
                     }
-                    while (brporuka>0);
+                    while (brporuka > 0);
                     //Boje
-                inputColor();
-                outputColor();
-                brojporukeColor();
-                ciklusColor();
+                    inputColor();
+                    outputColor();
+                    brojporukeColor();
+                    ciklusColor();
                 }
-        }
+            }
         }
 
         //button CopySignal
@@ -752,6 +776,8 @@ namespace CAN_BUS_komunikacija
                 send.Text += "Output -> Payload: " + outputPayloadIspis() + Environment.NewLine;
                 inputColor();
                 outputColor();
+                comboBox_BROJ_Poruka.Text = "1";
+                comboBox_MS.Text = "0";
             }
 
 
