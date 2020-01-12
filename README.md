@@ -38,4 +38,4 @@ Komunikacija je zamišljena tako da korisnik upiše CAN ID i Payload te prema vr
 
 **Broj poslanih poruka** -> Šalje određen broj poruka svakih odabranih ms.
 
--> Opcije se odnose na Send CopyTelegram button.
+Opcije se odnose na Send CopyTelegram button.
