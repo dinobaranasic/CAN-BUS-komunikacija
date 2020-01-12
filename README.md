@@ -32,8 +32,10 @@ Komunikacija je zamišljena tako da korisnik upiše CAN ID i Payload te prema vr
 
 **Greška Payload** -> Prikazuje se greška ako nismo upisali payload.
 
-### U izradi:
+## Novo:
 
 **Ciklus slanja poruka** -> Šalje određen broj poruka svakih odabranih ms.
 
 **Broj poslanih poruka** -> Šalje određen broj poruka svakih odabranih ms.
+
+-> Opcije se odnose na Send CopyTelegram button.
