@@ -81,6 +81,7 @@
             this.buttondefault = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -139,7 +140,6 @@
             this.buttonCopyTelegram.TabIndex = 11;
             this.buttonCopyTelegram.Text = "   Send\r\nCopyTelegram";
             this.buttonCopyTelegram.UseVisualStyleBackColor = false;
-            this.buttonCopyTelegram.Click += new System.EventHandler(this.buttonCopyTelegram_Click);
             // 
             // buttonCopySignal
             // 
@@ -154,7 +154,6 @@
             this.buttonCopySignal.TabIndex = 12;
             this.buttonCopySignal.Text = "  Send\r\nCopySignal";
             this.buttonCopySignal.UseVisualStyleBackColor = false;
-            this.buttonCopySignal.Click += new System.EventHandler(this.buttonCopySignal_Click);
             // 
             // groupBox1
             // 
@@ -233,7 +232,6 @@
             this.textBox_CAN_ID_INPUT.Name = "textBox_CAN_ID_INPUT";
             this.textBox_CAN_ID_INPUT.Size = new System.Drawing.Size(100, 26);
             this.textBox_CAN_ID_INPUT.TabIndex = 15;
-            this.textBox_CAN_ID_INPUT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_CAN_ID_OUTPUT_KeyPress);
             // 
             // textBox0I
             // 
@@ -245,7 +243,6 @@
             this.textBox0I.Name = "textBox0I";
             this.textBox0I.Size = new System.Drawing.Size(30, 26);
             this.textBox0I.TabIndex = 17;
-            this.textBox0I.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox7I_KeyPress);
             // 
             // textBox1I
             // 
@@ -257,7 +254,6 @@
             this.textBox1I.Name = "textBox1I";
             this.textBox1I.Size = new System.Drawing.Size(30, 26);
             this.textBox1I.TabIndex = 18;
-            this.textBox1I.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox7I_KeyPress);
             // 
             // textBox2I
             // 
@@ -269,7 +265,6 @@
             this.textBox2I.Name = "textBox2I";
             this.textBox2I.Size = new System.Drawing.Size(30, 26);
             this.textBox2I.TabIndex = 19;
-            this.textBox2I.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox7I_KeyPress);
             // 
             // textBox3I
             // 
@@ -281,7 +276,6 @@
             this.textBox3I.Name = "textBox3I";
             this.textBox3I.Size = new System.Drawing.Size(30, 26);
             this.textBox3I.TabIndex = 20;
-            this.textBox3I.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox7I_KeyPress);
             // 
             // textBox4I
             // 
@@ -293,7 +287,6 @@
             this.textBox4I.Name = "textBox4I";
             this.textBox4I.Size = new System.Drawing.Size(30, 26);
             this.textBox4I.TabIndex = 21;
-            this.textBox4I.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox7I_KeyPress);
             // 
             // textBox5I
             // 
@@ -305,7 +298,6 @@
             this.textBox5I.Name = "textBox5I";
             this.textBox5I.Size = new System.Drawing.Size(30, 26);
             this.textBox5I.TabIndex = 22;
-            this.textBox5I.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox7I_KeyPress);
             // 
             // textBox6I
             // 
@@ -317,7 +309,6 @@
             this.textBox6I.Name = "textBox6I";
             this.textBox6I.Size = new System.Drawing.Size(30, 26);
             this.textBox6I.TabIndex = 23;
-            this.textBox6I.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox7I_KeyPress);
             // 
             // textBox7I
             // 
@@ -329,7 +320,6 @@
             this.textBox7I.Name = "textBox7I";
             this.textBox7I.Size = new System.Drawing.Size(30, 26);
             this.textBox7I.TabIndex = 24;
-            this.textBox7I.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox7I_KeyPress);
             // 
             // checkBox0
             // 
@@ -344,7 +334,6 @@
             this.checkBox0.TabIndex = 33;
             this.checkBox0.Text = "B[0]";
             this.checkBox0.UseVisualStyleBackColor = false;
-            this.checkBox0.CheckedChanged += new System.EventHandler(this.checkBox0_CheckedChanged);
             // 
             // checkBox1
             // 
@@ -357,8 +346,7 @@
             this.checkBox1.TabIndex = 34;
             this.checkBox1.Text = "B[1]";
             this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
-            // 
+             // 
             // checkBox2
             // 
             this.checkBox2.AutoSize = true;
@@ -370,8 +358,7 @@
             this.checkBox2.TabIndex = 35;
             this.checkBox2.Text = "B[2]";
             this.checkBox2.UseVisualStyleBackColor = true;
-            this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
-            // 
+              // 
             // checkBox3
             // 
             this.checkBox3.AutoSize = true;
@@ -383,8 +370,7 @@
             this.checkBox3.TabIndex = 36;
             this.checkBox3.Text = "B[3]";
             this.checkBox3.UseVisualStyleBackColor = true;
-            this.checkBox3.CheckedChanged += new System.EventHandler(this.checkBox3_CheckedChanged);
-            // 
+                     // 
             // checkBox4
             // 
             this.checkBox4.AutoSize = true;
@@ -396,8 +382,7 @@
             this.checkBox4.TabIndex = 37;
             this.checkBox4.Text = "B[4]";
             this.checkBox4.UseVisualStyleBackColor = true;
-            this.checkBox4.CheckedChanged += new System.EventHandler(this.checkBox4_CheckedChanged);
-            // 
+                   // 
             // checkBox5
             // 
             this.checkBox5.AutoSize = true;
@@ -409,8 +394,7 @@
             this.checkBox5.TabIndex = 38;
             this.checkBox5.Text = "B[5]";
             this.checkBox5.UseVisualStyleBackColor = true;
-            this.checkBox5.CheckedChanged += new System.EventHandler(this.checkBox5_CheckedChanged);
-            // 
+                   // 
             // checkBox6
             // 
             this.checkBox6.AutoSize = true;
@@ -422,8 +406,7 @@
             this.checkBox6.TabIndex = 39;
             this.checkBox6.Text = "B[6]";
             this.checkBox6.UseVisualStyleBackColor = true;
-            this.checkBox6.CheckedChanged += new System.EventHandler(this.checkBox6_CheckedChanged);
-            // 
+                      // 
             // checkBox7
             // 
             this.checkBox7.AutoSize = true;
@@ -435,8 +418,7 @@
             this.checkBox7.TabIndex = 40;
             this.checkBox7.Text = "B[7]";
             this.checkBox7.UseVisualStyleBackColor = true;
-            this.checkBox7.CheckedChanged += new System.EventHandler(this.checkBox7_CheckedChanged);
-            // 
+                      // 
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.Transparent;
@@ -543,7 +525,6 @@
             this.textBox_CAN_ID_OUTPUT.Name = "textBox_CAN_ID_OUTPUT";
             this.textBox_CAN_ID_OUTPUT.Size = new System.Drawing.Size(100, 26);
             this.textBox_CAN_ID_OUTPUT.TabIndex = 15;
-            this.textBox_CAN_ID_OUTPUT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_CAN_ID_OUTPUT_KeyPress);
             // 
             // label6
             // 
@@ -565,7 +546,6 @@
             this.textBox7_0.Name = "textBox7_0";
             this.textBox7_0.Size = new System.Drawing.Size(30, 26);
             this.textBox7_0.TabIndex = 24;
-            this.textBox7_0.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox7_0_KeyPress);
             // 
             // textBox0_0
             // 
@@ -577,7 +557,6 @@
             this.textBox0_0.Name = "textBox0_0";
             this.textBox0_0.Size = new System.Drawing.Size(30, 26);
             this.textBox0_0.TabIndex = 17;
-            this.textBox0_0.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox7_0_KeyPress);
             // 
             // textBox1_O
             // 
@@ -589,7 +568,6 @@
             this.textBox1_O.Name = "textBox1_O";
             this.textBox1_O.Size = new System.Drawing.Size(30, 26);
             this.textBox1_O.TabIndex = 18;
-            this.textBox1_O.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox7_0_KeyPress);
             // 
             // textBox2_0
             // 
@@ -601,7 +579,6 @@
             this.textBox2_0.Name = "textBox2_0";
             this.textBox2_0.Size = new System.Drawing.Size(30, 26);
             this.textBox2_0.TabIndex = 19;
-            this.textBox2_0.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox7_0_KeyPress);
             // 
             // textBox3_0
             // 
@@ -613,7 +590,6 @@
             this.textBox3_0.Name = "textBox3_0";
             this.textBox3_0.Size = new System.Drawing.Size(30, 26);
             this.textBox3_0.TabIndex = 20;
-            this.textBox3_0.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox7_0_KeyPress);
             // 
             // textBox4_0
             // 
@@ -625,7 +601,6 @@
             this.textBox4_0.Name = "textBox4_0";
             this.textBox4_0.Size = new System.Drawing.Size(30, 26);
             this.textBox4_0.TabIndex = 21;
-            this.textBox4_0.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox7_0_KeyPress);
             // 
             // checkBox7o
             // 
@@ -638,7 +613,6 @@
             this.checkBox7o.TabIndex = 40;
             this.checkBox7o.Text = "B[7]";
             this.checkBox7o.UseVisualStyleBackColor = true;
-            this.checkBox7o.CheckedChanged += new System.EventHandler(this.checkBox7o_CheckedChanged);
             // 
             // checkBox6o
             // 
@@ -651,7 +625,6 @@
             this.checkBox6o.TabIndex = 39;
             this.checkBox6o.Text = "B[6]";
             this.checkBox6o.UseVisualStyleBackColor = true;
-            this.checkBox6o.CheckedChanged += new System.EventHandler(this.checkBox6o_CheckedChanged);
             // 
             // textBox5_0
             // 
@@ -663,8 +636,7 @@
             this.textBox5_0.Name = "textBox5_0";
             this.textBox5_0.Size = new System.Drawing.Size(30, 26);
             this.textBox5_0.TabIndex = 22;
-            this.textBox5_0.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox7_0_KeyPress);
-            // 
+                    // 
             // checkBox5o
             // 
             this.checkBox5o.AutoSize = true;
@@ -676,8 +648,7 @@
             this.checkBox5o.TabIndex = 38;
             this.checkBox5o.Text = "B[5]";
             this.checkBox5o.UseVisualStyleBackColor = true;
-            this.checkBox5o.CheckedChanged += new System.EventHandler(this.checkBox5o_CheckedChanged);
-            // 
+                     // 
             // textBox6_0
             // 
             this.textBox6_0.Font = new System.Drawing.Font("Ink Free", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -688,7 +659,6 @@
             this.textBox6_0.Name = "textBox6_0";
             this.textBox6_0.Size = new System.Drawing.Size(30, 26);
             this.textBox6_0.TabIndex = 23;
-            this.textBox6_0.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox7_0_KeyPress);
             // 
             // checkBox4o
             // 
@@ -701,7 +671,6 @@
             this.checkBox4o.TabIndex = 37;
             this.checkBox4o.Text = "B[4]";
             this.checkBox4o.UseVisualStyleBackColor = true;
-            this.checkBox4o.CheckedChanged += new System.EventHandler(this.checkBox4o_CheckedChanged);
             // 
             // checkBox3o
             // 
@@ -714,8 +683,7 @@
             this.checkBox3o.TabIndex = 36;
             this.checkBox3o.Text = "B[3]";
             this.checkBox3o.UseVisualStyleBackColor = true;
-            this.checkBox3o.CheckedChanged += new System.EventHandler(this.checkBox3o_CheckedChanged);
-            // 
+             // 
             // checkBox0o
             // 
             this.checkBox0o.AutoSize = true;
@@ -727,8 +695,7 @@
             this.checkBox0o.TabIndex = 33;
             this.checkBox0o.Text = "B[0]";
             this.checkBox0o.UseVisualStyleBackColor = true;
-            this.checkBox0o.CheckedChanged += new System.EventHandler(this.checkBox0o_CheckedChanged);
-            // 
+             // 
             // checkBox2o
             // 
             this.checkBox2o.AutoSize = true;
@@ -740,7 +707,6 @@
             this.checkBox2o.TabIndex = 35;
             this.checkBox2o.Text = "B[2]";
             this.checkBox2o.UseVisualStyleBackColor = true;
-            this.checkBox2o.CheckedChanged += new System.EventHandler(this.checkBox2o_CheckedChanged);
             // 
             // checkBox1o
             // 
@@ -753,8 +719,7 @@
             this.checkBox1o.TabIndex = 34;
             this.checkBox1o.Text = "B[1]";
             this.checkBox1o.UseVisualStyleBackColor = true;
-            this.checkBox1o.CheckedChanged += new System.EventHandler(this.checkBox1o_CheckedChanged_1);
-            // 
+             // 
             // buttondefault
             // 
             this.buttondefault.BackColor = System.Drawing.Color.White;
@@ -768,8 +733,7 @@
             this.buttondefault.TabIndex = 51;
             this.buttondefault.Text = "Default";
             this.buttondefault.UseVisualStyleBackColor = false;
-            this.buttondefault.Click += new System.EventHandler(this.buttondefault_Click);
-            // 
+             // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -792,6 +756,17 @@
             this.label8.Text = " ** Send CopyTelegram -> Ima svojstvo ciklusa slanja poruka(ms) i broj poslanih p" +
     "oruka **\r\n";
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Ink Free", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.SystemColors.ActiveBorder;
+            this.label9.Location = new System.Drawing.Point(803, 703);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(177, 26);
+            this.label9.TabIndex = 54;
+            this.label9.Text = "Riješeno sa OOP.";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -800,6 +775,7 @@
             this.BackgroundImage = global::CAN_BUS_komunikacija.Properties.Resources.backimage;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1008, 729);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.buttondefault);
@@ -822,7 +798,6 @@
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CAN BUS Komunikacija";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
@@ -887,6 +862,7 @@
         private System.Windows.Forms.RichTextBox send;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
     }
 }
 
