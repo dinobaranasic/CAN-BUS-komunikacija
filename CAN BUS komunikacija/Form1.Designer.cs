@@ -81,6 +81,7 @@
             this.buttondefault = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -792,6 +793,17 @@
             this.label8.Text = " ** Send CopyTelegram -> Ima svojstvo ciklusa slanja poruka(ms) i broj poslanih p" +
     "oruka **\r\n";
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Ink Free", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.SystemColors.ActiveBorder;
+            this.label9.Location = new System.Drawing.Point(790, 703);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(190, 26);
+            this.label9.TabIndex = 54;
+            this.label9.Text = "Riješeno bez OOP.";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -800,6 +812,7 @@
             this.BackgroundImage = global::CAN_BUS_komunikacija.Properties.Resources.backimage;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1008, 729);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.buttondefault);
@@ -887,6 +900,7 @@
         private System.Windows.Forms.RichTextBox send;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
     }
 }
 
