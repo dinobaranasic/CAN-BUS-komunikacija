@@ -346,7 +346,7 @@
             this.checkBox1.TabIndex = 34;
             this.checkBox1.Text = "B[1]";
             this.checkBox1.UseVisualStyleBackColor = true;
-             // 
+            // 
             // checkBox2
             // 
             this.checkBox2.AutoSize = true;
@@ -358,7 +358,7 @@
             this.checkBox2.TabIndex = 35;
             this.checkBox2.Text = "B[2]";
             this.checkBox2.UseVisualStyleBackColor = true;
-              // 
+            // 
             // checkBox3
             // 
             this.checkBox3.AutoSize = true;
@@ -370,7 +370,7 @@
             this.checkBox3.TabIndex = 36;
             this.checkBox3.Text = "B[3]";
             this.checkBox3.UseVisualStyleBackColor = true;
-                     // 
+            // 
             // checkBox4
             // 
             this.checkBox4.AutoSize = true;
@@ -382,7 +382,7 @@
             this.checkBox4.TabIndex = 37;
             this.checkBox4.Text = "B[4]";
             this.checkBox4.UseVisualStyleBackColor = true;
-                   // 
+            // 
             // checkBox5
             // 
             this.checkBox5.AutoSize = true;
@@ -394,7 +394,7 @@
             this.checkBox5.TabIndex = 38;
             this.checkBox5.Text = "B[5]";
             this.checkBox5.UseVisualStyleBackColor = true;
-                   // 
+            // 
             // checkBox6
             // 
             this.checkBox6.AutoSize = true;
@@ -406,7 +406,7 @@
             this.checkBox6.TabIndex = 39;
             this.checkBox6.Text = "B[6]";
             this.checkBox6.UseVisualStyleBackColor = true;
-                      // 
+            // 
             // checkBox7
             // 
             this.checkBox7.AutoSize = true;
@@ -418,7 +418,7 @@
             this.checkBox7.TabIndex = 40;
             this.checkBox7.Text = "B[7]";
             this.checkBox7.UseVisualStyleBackColor = true;
-                      // 
+            // 
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.Transparent;
@@ -636,7 +636,7 @@
             this.textBox5_0.Name = "textBox5_0";
             this.textBox5_0.Size = new System.Drawing.Size(30, 26);
             this.textBox5_0.TabIndex = 22;
-                    // 
+            // 
             // checkBox5o
             // 
             this.checkBox5o.AutoSize = true;
@@ -648,7 +648,7 @@
             this.checkBox5o.TabIndex = 38;
             this.checkBox5o.Text = "B[5]";
             this.checkBox5o.UseVisualStyleBackColor = true;
-                     // 
+            // 
             // textBox6_0
             // 
             this.textBox6_0.Font = new System.Drawing.Font("Ink Free", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -683,7 +683,7 @@
             this.checkBox3o.TabIndex = 36;
             this.checkBox3o.Text = "B[3]";
             this.checkBox3o.UseVisualStyleBackColor = true;
-             // 
+            // 
             // checkBox0o
             // 
             this.checkBox0o.AutoSize = true;
@@ -695,7 +695,7 @@
             this.checkBox0o.TabIndex = 33;
             this.checkBox0o.Text = "B[0]";
             this.checkBox0o.UseVisualStyleBackColor = true;
-             // 
+            // 
             // checkBox2o
             // 
             this.checkBox2o.AutoSize = true;
@@ -719,7 +719,7 @@
             this.checkBox1o.TabIndex = 34;
             this.checkBox1o.Text = "B[1]";
             this.checkBox1o.UseVisualStyleBackColor = true;
-             // 
+            // 
             // buttondefault
             // 
             this.buttondefault.BackColor = System.Drawing.Color.White;
@@ -733,7 +733,7 @@
             this.buttondefault.TabIndex = 51;
             this.buttondefault.Text = "Default";
             this.buttondefault.UseVisualStyleBackColor = false;
-             // 
+            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -798,6 +798,7 @@
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CAN BUS Komunikacija";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
