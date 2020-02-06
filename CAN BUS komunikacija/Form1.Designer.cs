@@ -140,6 +140,7 @@
             this.buttonCopyTelegram.TabIndex = 11;
             this.buttonCopyTelegram.Text = "   Send\r\nCopyTelegram";
             this.buttonCopyTelegram.UseVisualStyleBackColor = false;
+            this.buttonCopyTelegram.Click += new System.EventHandler(this.buttonCopyTelegram_Click);
             // 
             // buttonCopySignal
             // 
@@ -334,6 +335,7 @@
             this.checkBox0.TabIndex = 33;
             this.checkBox0.Text = "B[0]";
             this.checkBox0.UseVisualStyleBackColor = false;
+            this.checkBox0.CheckedChanged += new System.EventHandler(this.checkBox0_CheckedChanged);
             // 
             // checkBox1
             // 
@@ -346,6 +348,7 @@
             this.checkBox1.TabIndex = 34;
             this.checkBox1.Text = "B[1]";
             this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // checkBox2
             // 
@@ -358,6 +361,7 @@
             this.checkBox2.TabIndex = 35;
             this.checkBox2.Text = "B[2]";
             this.checkBox2.UseVisualStyleBackColor = true;
+            this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
             // 
             // checkBox3
             // 
@@ -370,6 +374,7 @@
             this.checkBox3.TabIndex = 36;
             this.checkBox3.Text = "B[3]";
             this.checkBox3.UseVisualStyleBackColor = true;
+            this.checkBox3.CheckedChanged += new System.EventHandler(this.checkBox3_CheckedChanged);
             // 
             // checkBox4
             // 
@@ -382,6 +387,7 @@
             this.checkBox4.TabIndex = 37;
             this.checkBox4.Text = "B[4]";
             this.checkBox4.UseVisualStyleBackColor = true;
+            this.checkBox4.CheckedChanged += new System.EventHandler(this.checkBox4_CheckedChanged);
             // 
             // checkBox5
             // 
@@ -394,6 +400,7 @@
             this.checkBox5.TabIndex = 38;
             this.checkBox5.Text = "B[5]";
             this.checkBox5.UseVisualStyleBackColor = true;
+            this.checkBox5.CheckedChanged += new System.EventHandler(this.checkBox5_CheckedChanged);
             // 
             // checkBox6
             // 
@@ -406,6 +413,7 @@
             this.checkBox6.TabIndex = 39;
             this.checkBox6.Text = "B[6]";
             this.checkBox6.UseVisualStyleBackColor = true;
+            this.checkBox6.CheckedChanged += new System.EventHandler(this.checkBox6_CheckedChanged);
             // 
             // checkBox7
             // 
@@ -418,6 +426,7 @@
             this.checkBox7.TabIndex = 40;
             this.checkBox7.Text = "B[7]";
             this.checkBox7.UseVisualStyleBackColor = true;
+            this.checkBox7.CheckedChanged += new System.EventHandler(this.checkBox7_CheckedChanged);
             // 
             // groupBox2
             // 
@@ -613,6 +622,7 @@
             this.checkBox7o.TabIndex = 40;
             this.checkBox7o.Text = "B[7]";
             this.checkBox7o.UseVisualStyleBackColor = true;
+            this.checkBox7o.CheckedChanged += new System.EventHandler(this.checkBox7o_CheckedChanged);
             // 
             // checkBox6o
             // 
@@ -625,6 +635,7 @@
             this.checkBox6o.TabIndex = 39;
             this.checkBox6o.Text = "B[6]";
             this.checkBox6o.UseVisualStyleBackColor = true;
+            this.checkBox6o.CheckedChanged += new System.EventHandler(this.checkBox6o_CheckedChanged);
             // 
             // textBox5_0
             // 
@@ -648,6 +659,7 @@
             this.checkBox5o.TabIndex = 38;
             this.checkBox5o.Text = "B[5]";
             this.checkBox5o.UseVisualStyleBackColor = true;
+            this.checkBox5o.CheckedChanged += new System.EventHandler(this.checkBox5o_CheckedChanged);
             // 
             // textBox6_0
             // 
@@ -671,6 +683,7 @@
             this.checkBox4o.TabIndex = 37;
             this.checkBox4o.Text = "B[4]";
             this.checkBox4o.UseVisualStyleBackColor = true;
+            this.checkBox4o.CheckedChanged += new System.EventHandler(this.checkBox4o_CheckedChanged);
             // 
             // checkBox3o
             // 
@@ -683,6 +696,7 @@
             this.checkBox3o.TabIndex = 36;
             this.checkBox3o.Text = "B[3]";
             this.checkBox3o.UseVisualStyleBackColor = true;
+            this.checkBox3o.CheckedChanged += new System.EventHandler(this.checkBox3o_CheckedChanged);
             // 
             // checkBox0o
             // 
@@ -695,6 +709,7 @@
             this.checkBox0o.TabIndex = 33;
             this.checkBox0o.Text = "B[0]";
             this.checkBox0o.UseVisualStyleBackColor = true;
+            this.checkBox0o.CheckedChanged += new System.EventHandler(this.checkBox0o_CheckedChanged);
             // 
             // checkBox2o
             // 
@@ -707,6 +722,7 @@
             this.checkBox2o.TabIndex = 35;
             this.checkBox2o.Text = "B[2]";
             this.checkBox2o.UseVisualStyleBackColor = true;
+            this.checkBox2o.CheckedChanged += new System.EventHandler(this.checkBox2o_CheckedChanged);
             // 
             // checkBox1o
             // 
@@ -719,6 +735,7 @@
             this.checkBox1o.TabIndex = 34;
             this.checkBox1o.Text = "B[1]";
             this.checkBox1o.UseVisualStyleBackColor = true;
+            this.checkBox1o.CheckedChanged += new System.EventHandler(this.checkBox1o_CheckedChanged_1);
             // 
             // buttondefault
             // 

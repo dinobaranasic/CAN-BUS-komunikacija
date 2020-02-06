@@ -54,7 +54,6 @@
     </Compile>
     <Compile Include="Message\Inputporuka.cs" />
     <Compile Include="Message\Outputporuka.cs" />
-    <Compile Include="Message\Poruke.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
