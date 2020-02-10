@@ -35,23 +35,14 @@ namespace CAN_BUS_komunikacija.Message
             get { return inputcanid; }   // get method
             set { inputcanid = value; }  // set method
         }
-
-        //Get set
-        public string Inputporuka_property
-        {
-            get { return inputporuka; }   // get method
-            set { inputporuka = value; }  // set method
-        }
-
+       
         //Lista u koju spremamo checkboxe
         protected List<string> listcheckbox = new List<string>();
 
         //Dohvača te vraća insput poruko
-        public string VratiInput(string payload, string canid)
+        public string VratiInput()
         {
-            inputpayload = payload;
-            inputcanid = canid;
-            inputporuka = inputpayload + inputcanid;
+            inputporuka = "Input CAN ID: " + inputcanid + "\nInput payload: " + inputpayload +"\n";
             return inputporuka;
         }
 

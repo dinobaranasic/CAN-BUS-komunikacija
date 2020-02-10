@@ -21,9 +21,9 @@ namespace CAN_BUS_komunikacija
         {
             InitializeComponent();
         }
-        
-        //Svojstvo checkBox i checkBoxo --> ako jedan on njih posatane oznaćen automatski postane i drugi, isto tako vrijedi i za odznačivanje
+
         //Samo vizualni dizajn
+        //Svojstvo checkBox i checkBoxo --> ako jedan on njih posatane oznaćen automatski postane i drugi, isto tako vrijedi i za odznačivanje
         #region checkBox
         private void checkBox0_CheckedChanged(object sender, EventArgs e)
         {
@@ -215,16 +215,32 @@ namespace CAN_BUS_komunikacija
         }
         #endregion
 
-        //Ispis CopyTelegram
+        //Dohvat podataka Inputa preko klase Inputporuka
+        public string InputPoruka()
+        {
+            Message.Inputporuka inputporuka = new Message.Inputporuka();
+            inputporuka.Inputcanid_property = textBox_CAN_ID_INPUT.Text;
+            inputporuka.Inputpayload_property = textBox0I.Text + textBox1I.Text + textBox2I.Text + textBox3I.Text + textBox4I.Text + textBox5I.Text + textBox6I.Text + textBox7I.Text;
+            return inputporuka.VratiInput();
+        }
+
+        //Dohvat podataka Output preko klase Outputporuka
+        public string OutputPoruka()
+        {
+            Message.Outputporuka outputporuka = new Message.Outputporuka();
+            outputporuka.Outputcanid_property = textBox_CAN_ID_OUTPUT.Text;
+            outputporuka.Outputpayload_property = textBox0_0.Text + textBox1_O.Text + textBox2_0.Text + textBox3_0.Text + textBox4_0.Text + textBox5_0.Text + textBox6_0.Text + textBox7_0.Text;
+            return outputporuka.VratiOutputPoslije();
+        }
 
 
-        
 
-        
+
 
         //Ucitavanje forme
         private void Form1_Load(object sender, EventArgs e)
         {
+            
             comboBox_BROJ_Poruka.SelectedIndex = 0;
             comboBox_MS.SelectedIndex = 0;
             textBox0_0.Text = "01";
@@ -248,7 +264,8 @@ namespace CAN_BUS_komunikacija
 
         private void buttonCopyTelegram_Click(object sender, EventArgs e)
         {
-
+            send.Text = InputPoruka();
+            send.Text = OutputPoruka();
         }
     }
 }
