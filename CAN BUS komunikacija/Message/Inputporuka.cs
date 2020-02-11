@@ -14,7 +14,6 @@ using CAN_BUS_komunikacija.Properties;
 namespace CAN_BUS_komunikacija.Message
 {
     // Nasljeđeni razred : Bazni razred
-
     public class Inputporuka : Form1
     {
         //Varijable za rad sa Input porukama

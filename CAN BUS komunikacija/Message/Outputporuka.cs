@@ -33,7 +33,7 @@ namespace CAN_BUS_komunikacija.Message
         public string VratiOutputPrije()
         {
             outputporuka = "Output CAN ID: " + outputcanid + "\nOutput payload: " + outputpayload + "\n";
-            return inputporuka;
+            return outputporuka;
         }
 
         //Dohvača te vraća output poruko nakon zamijene
@@ -41,7 +41,7 @@ namespace CAN_BUS_komunikacija.Message
         {
             outputpayload = inputpayload;
             outputporuka = "Output CAN ID: " + outputcanid + "\nOutput payload: " + outputpayload + "\n";
-            return inputporuka;
+            return outputporuka;
         }
     }
 }

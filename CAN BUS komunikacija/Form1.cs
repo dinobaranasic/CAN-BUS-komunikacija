@@ -215,6 +215,59 @@ namespace CAN_BUS_komunikacija
         }
         #endregion
 
+        //Svojstvo da se mogu upisati samo brojevi te se oni kasnije pretvraju u Hex brojeve.
+        #region CAN ID
+        private void textBox_CAN_ID_OUTPUT_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+        #endregion
+ 
+        //Svojstvo da se mogu upisati samo Hex brojevi maksimalne dužine 2
+        #region Hex brojevi
+        string HexNiz = "0123456789abcdefABCDEF\b";
+        private void textBox7I_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            if (!HexNiz.Contains(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textBox7_0_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            if (!HexNiz.Contains(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+        #endregion
+
+        //Svojstvo o radu s greškama
+        #region Greške
+        //Greška -> CAN ID
+        private void greškaCanId()
+        {
+            send.Clear();
+            string message = "Ne možete poslati bez CAN ID! \nUpišite CAN ID.";
+            string title = "Greška -> CAN ID";
+            MessageBox.Show(message, title);
+            send.Text += "Molim upišite u Input i Output CAN ID." + Environment.NewLine;
+        }
+        //Greška -> Payload
+        private void greškaPayload()
+        {
+            send.Clear();
+            string message = "Ne možete poslati bez Payloada! \nUpišite Payload.";
+            string title = "Greška -> Payload";
+            MessageBox.Show(message, title);
+            send.Text += "Molim upišite u Input i Output Payload." + Environment.NewLine;
+        }
+        #endregion
+
         //Dohvat podataka Inputa preko klase Inputporuka
         public string InputPoruka()
         {
@@ -230,12 +283,8 @@ namespace CAN_BUS_komunikacija
             Message.Outputporuka outputporuka = new Message.Outputporuka();
             outputporuka.Outputcanid_property = textBox_CAN_ID_OUTPUT.Text;
             outputporuka.Outputpayload_property = textBox0_0.Text + textBox1_O.Text + textBox2_0.Text + textBox3_0.Text + textBox4_0.Text + textBox5_0.Text + textBox6_0.Text + textBox7_0.Text;
-            return outputporuka.VratiOutputPoslije();
+            return outputporuka.VratiOutputPrije();
         }
-
-
-
-
 
         //Ucitavanje forme
         private void Form1_Load(object sender, EventArgs e)
@@ -266,6 +315,9 @@ namespace CAN_BUS_komunikacija
         {
             send.Text = InputPoruka();
             send.Text = OutputPoruka();
+
         }
+
+      
     }
 }
