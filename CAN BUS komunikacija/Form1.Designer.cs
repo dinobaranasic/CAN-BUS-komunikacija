@@ -30,14 +30,10 @@
         {
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
             this.buttonCopyTelegram = new System.Windows.Forms.Button();
             this.buttonCopySignal = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.send = new System.Windows.Forms.RichTextBox();
-            this.comboBox_BROJ_Poruka = new System.Windows.Forms.ComboBox();
-            this.comboBox_MS = new System.Windows.Forms.ComboBox();
             this.textBox_CAN_ID_INPUT = new System.Windows.Forms.TextBox();
             this.textBox0I = new System.Windows.Forms.TextBox();
             this.textBox1I = new System.Windows.Forms.TextBox();
@@ -79,9 +75,13 @@
             this.checkBox2o = new System.Windows.Forms.CheckBox();
             this.checkBox1o = new System.Windows.Forms.CheckBox();
             this.buttondefault = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.comboBox_BROJ_Poruka = new System.Windows.Forms.ComboBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.comboBox_MS = new System.Windows.Forms.ComboBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -106,26 +106,6 @@
             this.label5.Size = new System.Drawing.Size(85, 26);
             this.label5.TabIndex = 4;
             this.label5.Text = "Payload";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Ink Free", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(7, 246);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(290, 26);
-            this.label10.TabIndex = 10;
-            this.label10.Text = "Ciklus slanja poruka(ms): -->";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Ink Free", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(600, 246);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(258, 26);
-            this.label11.TabIndex = 9;
-            this.label11.Text = "Broj poslanih poruka : -->";
             // 
             // buttonCopyTelegram
             // 
@@ -155,6 +135,7 @@
             this.buttonCopySignal.TabIndex = 12;
             this.buttonCopySignal.Text = "  Send\r\nCopySignal";
             this.buttonCopySignal.UseVisualStyleBackColor = false;
+            this.buttonCopySignal.Click += new System.EventHandler(this.buttonCopySignal_Click);
             // 
             // groupBox1
             // 
@@ -182,48 +163,6 @@
             this.send.Size = new System.Drawing.Size(900, 188);
             this.send.TabIndex = 0;
             this.send.Text = "";
-            // 
-            // comboBox_BROJ_Poruka
-            // 
-            this.comboBox_BROJ_Poruka.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox_BROJ_Poruka.Font = new System.Drawing.Font("Ink Free", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox_BROJ_Poruka.FormattingEnabled = true;
-            this.comboBox_BROJ_Poruka.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8",
-            "9",
-            "10"});
-            this.comboBox_BROJ_Poruka.Location = new System.Drawing.Point(871, 245);
-            this.comboBox_BROJ_Poruka.Name = "comboBox_BROJ_Poruka";
-            this.comboBox_BROJ_Poruka.Size = new System.Drawing.Size(121, 27);
-            this.comboBox_BROJ_Poruka.TabIndex = 13;
-            // 
-            // comboBox_MS
-            // 
-            this.comboBox_MS.BackColor = System.Drawing.Color.White;
-            this.comboBox_MS.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox_MS.Font = new System.Drawing.Font("Ink Free", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox_MS.FormattingEnabled = true;
-            this.comboBox_MS.Items.AddRange(new object[] {
-            "0",
-            "25",
-            "50",
-            "75",
-            "100",
-            "125",
-            "150",
-            "175",
-            "200"});
-            this.comboBox_MS.Location = new System.Drawing.Point(303, 246);
-            this.comboBox_MS.Name = "comboBox_MS";
-            this.comboBox_MS.Size = new System.Drawing.Size(121, 27);
-            this.comboBox_MS.TabIndex = 14;
             // 
             // textBox_CAN_ID_INPUT
             // 
@@ -768,6 +707,49 @@
             this.buttondefault.TabIndex = 51;
             this.buttondefault.Text = "Default";
             this.buttondefault.UseVisualStyleBackColor = false;
+            this.buttondefault.Click += new System.EventHandler(this.buttondefault_Click);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Ink Free", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.SystemColors.ActiveBorder;
+            this.label9.Location = new System.Drawing.Point(803, 703);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(177, 26);
+            this.label9.TabIndex = 54;
+            this.label9.Text = "Riješeno sa OOP.";
+            // 
+            // comboBox_BROJ_Poruka
+            // 
+            this.comboBox_BROJ_Poruka.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox_BROJ_Poruka.Font = new System.Drawing.Font("Ink Free", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox_BROJ_Poruka.FormattingEnabled = true;
+            this.comboBox_BROJ_Poruka.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10"});
+            this.comboBox_BROJ_Poruka.Location = new System.Drawing.Point(871, 245);
+            this.comboBox_BROJ_Poruka.Name = "comboBox_BROJ_Poruka";
+            this.comboBox_BROJ_Poruka.Size = new System.Drawing.Size(121, 27);
+            this.comboBox_BROJ_Poruka.TabIndex = 13;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Ink Free", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(600, 246);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(258, 26);
+            this.label11.TabIndex = 9;
+            this.label11.Text = "Broj poslanih poruka : -->";
             // 
             // label7
             // 
@@ -778,6 +760,37 @@
             this.label7.Size = new System.Drawing.Size(39, 26);
             this.label7.TabIndex = 52;
             this.label7.Text = "ms";
+            // 
+            // comboBox_MS
+            // 
+            this.comboBox_MS.BackColor = System.Drawing.Color.White;
+            this.comboBox_MS.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox_MS.Font = new System.Drawing.Font("Ink Free", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox_MS.FormattingEnabled = true;
+            this.comboBox_MS.Items.AddRange(new object[] {
+            "0",
+            "25",
+            "50",
+            "75",
+            "100",
+            "125",
+            "150",
+            "175",
+            "200"});
+            this.comboBox_MS.Location = new System.Drawing.Point(303, 246);
+            this.comboBox_MS.Name = "comboBox_MS";
+            this.comboBox_MS.Size = new System.Drawing.Size(121, 27);
+            this.comboBox_MS.TabIndex = 14;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Ink Free", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(7, 246);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(290, 26);
+            this.label10.TabIndex = 10;
+            this.label10.Text = "Ciklus slanja poruka(ms): -->";
             // 
             // label8
             // 
@@ -790,17 +803,6 @@
             this.label8.TabIndex = 53;
             this.label8.Text = " ** Send CopyTelegram -> Ima svojstvo ciklusa slanja poruka(ms) i broj poslanih p" +
     "oruka **\r\n";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Ink Free", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-            this.label9.Location = new System.Drawing.Point(803, 703);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(177, 26);
-            this.label9.TabIndex = 54;
-            this.label9.Text = "Riješeno sa OOP.";
             // 
             // Form1
             // 
@@ -847,13 +849,9 @@
         #endregion
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button buttonCopyTelegram;
         private System.Windows.Forms.Button buttonCopySignal;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ComboBox comboBox_BROJ_Poruka;
-        private System.Windows.Forms.ComboBox comboBox_MS;
         private System.Windows.Forms.TextBox textBox_CAN_ID_INPUT;
         private System.Windows.Forms.TextBox textBox0I;
         private System.Windows.Forms.TextBox textBox1I;
@@ -896,9 +894,13 @@
         private System.Windows.Forms.CheckBox checkBox1o;
         private System.Windows.Forms.Button buttondefault;
         private System.Windows.Forms.RichTextBox send;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.ComboBox comboBox_BROJ_Poruka;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ComboBox comboBox_MS;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label8;
     }
 }
 

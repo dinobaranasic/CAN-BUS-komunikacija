@@ -13,7 +13,6 @@ using CAN_BUS_komunikacija.Properties;
 
 namespace CAN_BUS_komunikacija.Message
 {
-    // Nasljeđeni razred : Bazni razred
     public class Inputporuka : Form1
     {
         //Varijable za rad sa Input porukama
@@ -35,9 +34,6 @@ namespace CAN_BUS_komunikacija.Message
             set { inputcanid = value; }  // set method
         }
        
-        //Lista u koju spremamo checkboxe
-        protected List<string> listcheckbox = new List<string>();
-
         //Dohvača te vraća insput poruko
         public string VratiInput()
         {
