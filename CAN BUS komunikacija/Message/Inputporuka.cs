@@ -13,7 +13,7 @@ using CAN_BUS_komunikacija.Properties;
 
 namespace CAN_BUS_komunikacija.Message
 {
-    public class Inputporuka : Form1
+    public class Inputporuka : Poruka
     {
         //Varijable za rad sa Input porukama
         protected string inputpayload;
@@ -35,7 +35,7 @@ namespace CAN_BUS_komunikacija.Message
         }
        
         //Dohvača te vraća insput poruko
-        public string VratiInput()
+        public override string Vratiporuku()
         {
             inputporuka = "Input CAN ID: " + inputcanid + "\nInput payload: " + inputpayload +"\n";
             return inputporuka;

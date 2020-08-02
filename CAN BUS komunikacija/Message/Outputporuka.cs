@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CAN_BUS_komunikacija.Message
 {
-    class Outputporuka : Inputporuka
+    class Outputporuka : Poruka
     {
         protected string outputpayload;
         protected string outputcanid;
@@ -27,7 +27,7 @@ namespace CAN_BUS_komunikacija.Message
         }
 
         //Dohvača te vraća output poruko prije zamjene
-        public string VratiOutputPrije()
+        public override string Vratiporuku()
         {
             outputporuka = "Output CAN ID: " + outputcanid + "\nOutput payload: " + outputpayload + "\n";
             return outputporuka;
