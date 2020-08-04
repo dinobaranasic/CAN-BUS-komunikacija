@@ -28,9 +28,9 @@ namespace CAN_BUS_komunikacija
         //Samo vizualni dizajn
         #region Vizualni dio
         //Svojstvo checkBox i checkBoxo --> ako jedan on njih posatane oznaćen automatski postane i drugi, isto tako vrijedi i za odznačivanje
-        #region checkBox
 
-        private void checkBoxIzgled(object sender, EventArgs e, string svojstvo) {
+        private void checkBoxIzgled(object sender, EventArgs e, string svojstvo)
+        {
             List<CheckBox> checkBoxesInput = new List<CheckBox>();
             checkBoxesInput.Add(checkBox0);
             checkBoxesInput.Add(checkBox1);
@@ -66,13 +66,12 @@ namespace CAN_BUS_komunikacija
             {
                 for (int i = 0; i < 8; i++)
                 {
-                        checkBoxesOutput[i].Checked = false;
-                        checkBoxesInput[i].Checked = false;
+                    checkBoxesOutput[i].Checked = false;
+                    checkBoxesInput[i].Checked = false;
                 }
             }
-    }
+        }
 
-        #endregion
         #endregion
 
         //Svojstva o CAN ID - Hex brojevi - Greške
@@ -148,13 +147,15 @@ namespace CAN_BUS_komunikacija
 
         public string OutputPorukaRandom()
         {
-            output.Outputcanid_property = textBox_CAN_ID_OUTPUT.Text;
+            string canID = textBox_CAN_ID_OUTPUT.Text;
+            string payload = "";
             Random rnd = new Random();
             for (int i = 0; i < 15; i++) {
                 int br = rnd.Next(1, 10);
-                output.Outputpayload_property += br.ToString();
+                payload += br.ToString();
             }
-            return output.Vratiporuku();
+            string random = "Output CAN ID: " + canID + "\nOutput payload: " + payload + "\n";
+            return random;
         }
         //Output poruka poslije CopyTelegram
         public string OutputPorukaPoslije()
@@ -188,7 +189,6 @@ namespace CAN_BUS_komunikacija
         //Ucitavanje forme
         private void Form1_Load(object sender, EventArgs e)
         {
-            
             comboBox_BROJ_Poruka.SelectedIndex = 0;
             comboBox_MS.SelectedIndex = 0;
             textBox0_0.Text = "01";
@@ -210,7 +210,6 @@ namespace CAN_BUS_komunikacija
             textBox_CAN_ID_INPUT.Text = "123456";
             textBox_CAN_ID_OUTPUT.Text = "654321";
             send.ReadOnly = true;
-            
 
         }
 
@@ -245,6 +244,7 @@ namespace CAN_BUS_komunikacija
         //CopyTelegram
         private void buttonCopyTelegram_Click(object sender, EventArgs e)
         {
+            checkBoxIzgled(sender, e, "clear");
             if (textBox_CAN_ID_INPUT.Text == "" || textBox_CAN_ID_OUTPUT.Text == "")
             {
                 greškaCanId();
@@ -289,9 +289,9 @@ namespace CAN_BUS_komunikacija
                         send.Text += InputPoruka();
                         send.Text += OutputPorukaPoslije();
                         send.Text += Environment.NewLine;
-                        pr = pr + 1;
+                        pr +=  1;
                     }
-                    while (pr == brporuka);
+                    while (pr <= brporuka);
                 }
             }
         }
