@@ -17,7 +17,7 @@ namespace CAN_BUS_komunikacija
     public partial class Form1 : Form
     {
         //OBJ
-        Message.Inputporuka input= new Message.Inputporuka();
+        Message.Inputporuka input = new Message.Inputporuka();
         Message.Outputporuka output = new Message.Outputporuka();
 
         public Form1()
@@ -28,7 +28,6 @@ namespace CAN_BUS_komunikacija
         //Samo vizualni dizajn
         #region Vizualni dio
         //Svojstvo checkBox i checkBoxo --> ako jedan on njih posatane oznaćen automatski postane i drugi, isto tako vrijedi i za odznačivanje
-
         private void checkBoxIzgled(object sender, EventArgs e, string svojstvo)
         {
             List<CheckBox> checkBoxesInput = new List<CheckBox>();
@@ -72,6 +71,50 @@ namespace CAN_BUS_komunikacija
             }
         }
 
+        #region Color
+        //Svojstvo za mijenjanje boje texa - Input i Output
+        private void inputColor()
+        {
+            int start = 0;
+            int end = send.Text.LastIndexOf("Input");
+
+            send.SelectAll();
+            while (start < end)
+            {
+                send.Find("Input", start, send.TextLength, RichTextBoxFinds.MatchCase);
+                send.SelectionColor = Color.Red;
+                start = send.Text.IndexOf("Input", start) + 1;
+            }
+        }
+
+        private void brojporukeColor()
+        {
+            int start = 0;
+            int end = send.Text.LastIndexOf("Poruka broj:");
+
+            send.SelectAll();
+            while (start < end)
+            {
+                send.Find("Poruka broj:", start, send.TextLength, RichTextBoxFinds.MatchCase);
+                send.SelectionColor = Color.DarkOliveGreen;
+                start = send.Text.IndexOf("Poruka broj:", start) + 1;
+            }
+        }
+
+        private void outputColor()
+        {
+            int start = 0;
+            int end = send.Text.LastIndexOf("Output");
+
+            send.SelectAll();
+            while (start < end)
+            {
+                send.Find("Output", start, send.TextLength, RichTextBoxFinds.MatchCase);
+                send.SelectionColor = Color.Blue;
+                start = send.Text.IndexOf("Output", start) + 1;
+            }
+        }
+        #endregion Color
         #endregion
 
         //Svojstva o CAN ID - Hex brojevi - Greške
@@ -86,7 +129,7 @@ namespace CAN_BUS_komunikacija
             }
         }
         #endregion
- 
+
         //Svojstvo da se mogu upisati samo Hex brojevi maksimalne dužine 2
         #region Hex brojevi
         string HexNiz = "0123456789abcdefABCDEF\b";
@@ -145,20 +188,57 @@ namespace CAN_BUS_komunikacija
             return output.Vratiporuku();
         }
 
+        //Inputporuka random prije slanja
+        public string InputPorukaRandom()
+        {
+            string canID = textBox_CAN_ID_INPUT.Text;
+            string payload = "";
+            Random rnd = new Random();
+            for (int i = 0; i < 15; i++)
+            {
+                int br = rnd.Next(1, 5);
+                payload += br.ToString();
+            }
+            string random = "Input CAN ID: " + canID + "\nInput payload: " + payload + "\n";
+            return random;
+        }
+
+        //Outporuka random prije slanja
         public string OutputPorukaRandom()
         {
             string canID = textBox_CAN_ID_OUTPUT.Text;
             string payload = "";
             Random rnd = new Random();
-            for (int i = 0; i < 15; i++) {
-                int br = rnd.Next(1, 10);
+            for (int i = 0; i < 15; i++)
+            {
+                int br = rnd.Next(5, 10);
                 payload += br.ToString();
             }
             string random = "Output CAN ID: " + canID + "\nOutput payload: " + payload + "\n";
             return random;
         }
+
+        //Outporuka random prije slanja
+        public string RandomPorukaAfterSend()
+        {
+            string input = InputPorukaRandom();
+            string output = OutputPorukaRandom();
+            string poruka = input;
+            for (int i = 0; i < output.IndexOf("\n"); i++)
+            {
+                poruka += output[i];
+            }
+            poruka += "\nOutput payload: ";
+            for (int i = input.LastIndexOf(": "); i < input.LastIndexOf(": ") + 15; i++)
+            {
+                poruka += input[i + 2];
+            }
+            poruka += "\n";
+            return poruka;
+        }
+
         //Output poruka poslije CopyTelegram
-        public string OutputPorukaPoslije()
+        public string OutputPorukaCopyTelegram()
         {
             output.Outputcanid_property = textBox_CAN_ID_OUTPUT.Text;
             input.Inputpayload_property = textBox0I.Text + textBox1I.Text + textBox2I.Text + textBox3I.Text + textBox4I.Text + textBox5I.Text + textBox6I.Text + textBox7I.Text;
@@ -278,20 +358,33 @@ namespace CAN_BUS_komunikacija
                         Thread.Sleep(brojciklusa);
                         send.Text += "Poruka broj: -> " + pr.ToString() + Environment.NewLine;
                         send.Text += "--------------------------------------------> Before Send <--------------------------------------------" + Environment.NewLine;
-                        send.Text += InputPoruka();
-                        if (pr == 1) { 
+                        if (pr == 1)
+                        {
+                            send.Text += InputPoruka();
                             send.Text += OutputPoruka();
                         }
-                        else{
+                        else
+                        {
+                            send.Text += InputPorukaRandom();
                             send.Text += OutputPorukaRandom();
                         }
                         send.Text += "---------------------------------------------> After Send <---------------------------------------------" + Environment.NewLine;
-                        send.Text += InputPoruka();
-                        send.Text += OutputPorukaPoslije();
+                        if (pr == 1)
+                        {
+                            send.Text += InputPoruka();
+                            send.Text += OutputPorukaCopyTelegram();
+                        }
+                        else
+                        {
+                            send.Text += RandomPorukaAfterSend();
+                        }
                         send.Text += Environment.NewLine;
-                        pr +=  1;
+                        pr += 1;
                     }
                     while (pr <= brporuka);
+                    inputColor();
+                    outputColor();
+                    brojporukeColor();
                 }
             }
         }
@@ -319,6 +412,8 @@ namespace CAN_BUS_komunikacija
             send.Text += OutputPorukaCopysignal();
             comboBox_BROJ_Poruka.Text = "1";
             comboBox_MS.Text = "0";
+            inputColor();
+            outputColor();
         }
         #endregion
     }
